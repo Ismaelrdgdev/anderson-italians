@@ -1,0 +1,26 @@
+.poppins{
+    font-family: "Poppins", sans-serif;
+}
+
+.cairo{
+    font-family: "Cairo", sans-serif;
+}
+
+header{
+    background-image: url("./images/bg.png");
+}
+
+nav{
+    position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+#card-carrinho{
+    
+}
+
+.display{
+    display: none;
+}
+
