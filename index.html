@@ -14,7 +14,7 @@
 
     <title>Italian Pizzas</title>
   </head>
-  <body >
+  <body>
     <header
       class="bg-cover h-50 w-full flex flex-col justify-center items-center cairo"
     >
@@ -26,109 +26,198 @@
     </header>
 
     <nav class="bg-gray-200 h-8 w-full flex cairo">
-      <div class="flex gap-4 text-sm  m-auto items-center ">
+      <div class="flex gap-4 text-sm m-auto items-center">
         <a href="#pizza">Pizzas</a>
         <a href="#dois-sabores">Dois sabores</a>
         <a href="#pizzas-doce">Pizzas Doces</a>
         <a href="">Bebida</a>
-        <a id="carrinho"><img src="./images/carrinho.png" alt=""></a>
+        <button id="carrinho">
+          <img src="./images/carrinho.png" alt="" />
+        </button>
       </div>
     </nav>
 
-    <section class="flex justify-center display" id="card-carrinho">
-        <div class="bg-green-500 h-50 w-90">
-
-        </div>
-
-    </section>
-
-    <h1 id="pizza" class="bg-gray-100 w-28 justify-center flex items-center m-2">Pizzas</h1>
+    <h1
+      id="pizza"
+      class="bg-gray-100 w-28 justify-center flex items-center m-2"
+    >
+      Pizzas
+    </h1>
     <section id="body" class="flex flex-col items-center gap-2">
-            <div class="h-30 gap-4 p-3 w-90 items-center bg-gray-100 flex rounded-xl shadow-md">
-                <div class="flex flex-col justify-around gap-2 text-sm">
-                    <p>Pizza de Calabresa</p>
-                    <p class="text-gray-500">Pizza saborosa, dividida em 8 fatias, quentinha na sua mesa.</p>
-                    <p class="text-green-500">R$ 25,00</p>
-                </div>
-
-                <div class=" flex flex-col items-center gap-2">
-                    <img src="./images/pizza.png" alt="" class="h-14 w-14">
-                    <button class="bg-yellow-300 w-20 rounded-lg text-sm">Adicionar</button>
-                </div>
-            </div>
-
-            <div class="h-30 gap-4 p-3 w-90 items-center  flex  border-b-2">
-
-                <div class="flex flex-col justify-around gap-2 text-sm">
-                    <p>Pizza de Calabresa</p>
-                    <p class="text-gray-500">Pizza saborosa, dividida em 8 fatias, quentinha na sua mesa.</p>
-                    <p class="text-green-500">R$ 25,00</p>
-                </div>
-
-                <div class=" flex flex-col items-center gap-2">
-                    <img src="./images/pizza.png" alt="" class="h-14 w-14">
-                    <button class="bg-yellow-300 w-20 rounded-lg text-sm">Adicionar</button>
-                </div>
-            </div>
-    </section>
-
-    <h1 id="pizza" class="bg-gray-100 w-28 justify-center flex items-center m-2">Pizzas</h1>
-    <section class="flex justify-center">
-        <div class="grid grid-cols-2 gap-4 m-2 poppins">
-            <div class="h-60 w-40 bg-gray-100 flex flex-col justify-around items-center rounded-xl shadow-md">
-                <p class="text-sm">Pizza de Calabresa</p>
-                <img src="./images/pizza.png" alt="" class="h-28 w-28">
-                <p class="text-green-500">R$ 25,00</p>
-                <button class="bg-yellow-300 w-30 rounded-lg p-1">Adicionar</button>
-            </div>
-
-            <div class="h-60 w-40 bg-gray-100 flex flex-col justify-around items-center rounded-xl shadow-md">
-                <p class="text-sm">Pizza de Calabresa</p>
-                <img src="./images/pizza.png" alt="" class="h-28 w-28">
-                <p class="text-green-500">R$ 25,00</p>
-                <button class="bg-yellow-300 w-30 rounded-lg p-1">Adicionar</button>
-            </div>
-
-            <div class="h-60 w-40 bg-gray-100 flex flex-col justify-around items-center rounded-xl shadow-md">
-                <p class="text-sm">Pizza de Calabresa</p>
-                <img src="./images/pizza.png" alt="" class="h-28 w-28">
-                <p class="text-green-500">R$ 25,00</p>
-                <button class="bg-yellow-300 w-30 rounded-lg p-1">Adicionar</button>
-            </div>
-
-            <div class="h-60 w-40 bg-gray-100 flex flex-col justify-around items-center rounded-xl shadow-md">
-                <p class="text-sm">Pizza de Calabresa</p>
-                <img src="./images/pizza.png" alt="" class="h-28 w-28">
-                <p class="text-green-500">R$ 25,00</p>
-                <button class="bg-yellow-300 w-30 rounded-lg p-1">Adicionar</button>
-            </div>
-
-            <div class="h-60 w-40 bg-gray-100 flex flex-col justify-around items-center rounded-xl shadow-md">
-                <p class="text-sm">Pizza de Calabresa</p>
-                <img src="./images/pizza.png" alt="" class="h-28 w-28">
-                <p class="text-green-500">R$ 25,00</p>
-                <button class="bg-yellow-300 w-30 rounded-lg p-1">Adicionar</button>
-            </div>
-
-            <div class="h-60 w-40 bg-gray-100 flex flex-col justify-around items-center rounded-xl shadow-md">
-                <p class="text-sm">Pizza de Calabresa</p>
-                <img src="./images/pizza.png" alt="" class="h-28 w-28">
-                <p class="text-green-500">R$ 25,00</p>
-                <button class="bg-yellow-300 w-30 rounded-lg p-1">Adicionar</button>
-            </div>
+      <div
+        class="h-30 gap-4 p-3 w-90 items-center bg-gray-100 flex rounded-xl shadow-md"
+      >
+        <div class="flex flex-col justify-around gap-2 text-sm">
+          <p>Pizza de Calabresa</p>
+          <p class="text-gray-500">
+            Pizza saborosa, dividida em 8 fatias, quentinha na sua mesa.
+          </p>
+          <p class="text-green-500">R$ 25,00</p>
         </div>
+
+        <div class="flex flex-col items-center gap-2">
+          <img src="./images/pizza.png" alt="" class="h-14 w-14" />
+          <button class="bg-yellow-300 w-20 rounded-lg text-sm">
+            Adicionar
+          </button>
+        </div>
+      </div>
+
+      <div class="h-30 gap-4 p-3 w-90 items-center flex border-b-2">
+        <div class="flex flex-col justify-around gap-2 text-sm">
+          <p>Pizza de Calabresa</p>
+          <p class="text-gray-500">
+            Pizza saborosa, dividida em 8 fatias, quentinha na sua mesa.
+          </p>
+          <p class="text-green-500">R$ 25,00</p>
+        </div>
+
+        <div class="flex flex-col items-center gap-2">
+          <img src="./images/pizza.png" alt="" class="h-14 w-14" />
+          <button class="bg-yellow-300 w-20 rounded-lg text-sm">
+            Adicionar
+          </button>
+        </div>
+      </div>
     </section>
 
+    <h1
+      id="pizza"
+      class="bg-gray-100 w-28 justify-center flex items-center m-2"
+    >
+      Pizzas
+    </h1>
+    <section class="flex justify-center">
+      <div class="grid grid-cols-2 gap-4 m-2 poppins">
+        <div
+          class="h-60 w-40 bg-gray-100 flex flex-col justify-around items-center rounded-xl shadow-md"
+        >
+          <p class="text-sm">Pizza de Calabresa</p>
+          <img src="./images/pizza.png" alt="" class="h-28 w-28" />
+          <p class="text-green-500">R$ 25,00</p>
+          <button class="bg-yellow-300 w-30 rounded-lg p-1">Adicionar</button>
+        </div>
+
+        <div
+          class="h-60 w-40 bg-gray-100 flex flex-col justify-around items-center rounded-xl shadow-md"
+        >
+          <p class="text-sm">Pizza de Calabresa</p>
+          <img src="./images/pizza.png" alt="" class="h-28 w-28" />
+          <p class="text-green-500">R$ 25,00</p>
+          <button class="bg-yellow-300 w-30 rounded-lg p-1">Adicionar</button>
+        </div>
+
+        <div
+          class="h-60 w-40 bg-gray-100 flex flex-col justify-around items-center rounded-xl shadow-md"
+        >
+          <p class="text-sm">Pizza de Calabresa</p>
+          <img src="./images/pizza.png" alt="" class="h-28 w-28" />
+          <p class="text-green-500">R$ 25,00</p>
+          <button class="bg-yellow-300 w-30 rounded-lg p-1">Adicionar</button>
+        </div>
+
+        <div
+          class="h-60 w-40 bg-gray-100 flex flex-col justify-around items-center rounded-xl shadow-md"
+        >
+          <p class="text-sm">Pizza de Calabresa</p>
+          <img src="./images/pizza.png" alt="" class="h-28 w-28" />
+          <p class="text-green-500">R$ 25,00</p>
+          <button class="bg-yellow-300 w-30 rounded-lg p-1">Adicionar</button>
+        </div>
+
+        <div
+          class="h-60 w-40 bg-gray-100 flex flex-col justify-around items-center rounded-xl shadow-md"
+        >
+          <p class="text-sm">Pizza de Calabresa</p>
+          <img src="./images/pizza.png" alt="" class="h-28 w-28" />
+          <p class="text-green-500">R$ 25,00</p>
+          <button class="bg-yellow-300 w-30 rounded-lg p-1">Adicionar</button>
+        </div>
+
+        <div
+          class="h-60 w-40 bg-gray-100 flex flex-col justify-around items-center rounded-xl shadow-md"
+        >
+          <p class="text-sm">Pizza de Calabresa</p>
+          <img src="./images/pizza.png" alt="" class="h-28 w-28" />
+          <p class="text-green-500">R$ 25,00</p>
+          <button class="bg-yellow-300 w-30 rounded-lg p-1">Adicionar</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal do carrinho -->
+    <div
+      id="card-carrinho"
+      class="bg-black/60 w-full h-full fixed top-0 left-0 `z-99` overflow-y-scroll items-center justify-center hidden"
+    >
+      <div class="flex justify-center items-center min-w-[90%] h-full">
+        <div
+          class="h-full md:h-[500px] min-w-[90%] md:min-w-[620px] bg-white p-4 flex flex-col gap-4"
+        >
+          <div class="flex justify-between items-center">
+            <h2 class="text-lg font-bold">Carrinho</h2>
+            <button
+              id="fechar-carrinho"
+              class="text-gray-500 hover:text-gray-700"
+            >
+              Fechar
+            </button>
+          </div>
+
+
+          <div class="flex flex-col justify-between h-full">
+              <div
+                id="itens-carrinho"
+                class="flex flex-col gap-2"
+              >
+                <!-- Itens do carrinho serão adicionados aqui dinamicamente -->
     
-
-
+                <div
+                  class="h-30 md:h-25 gap-2 p-3 md:w-full items-center bg-gray-100 flex flex-col rounded-xl shadow-md cairo"
+                >
+                  <div class="flex justify-between gap-2 text-sm w-full">
+                    <div>
+                      <p>Pizza de Calabresa</p>
+                      <p class="text-gray-500">
+                        Pizza saborosa, dividida em 8 fatias, quentinha na sua mesa.
+                      </p>
+                    </div>
+                    <button
+                      class="h-5 flex justify-center items-center bg-red-500 text-white px-2 py-1 rounded-lg"
+                    >
+                      <p>Remover</p>
+                    </button>
+                  </div>
     
-
-
-   
-
-
-
+                  <div class="flex justify-between w-full gap-2 text-lg">
+                    <p class="text-green-500">R$ 25,00</p>
+                    <div class="bg-gray-300 rounded-lg px-2 flex gap-2">
+                      <button>-</button>
+                      <span class="text-green-500">1</span>
+                      <button>+</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
     
+              <div class="w-full md:max-w-[620px] bg-white p-2">
+    
+                <p class="text-lg font-bold">
+                  Total: R$ <span id="total-carrinho">0,00</span>
+                </p>
+                <div class="flex items-center w-full justify-center">
+                  <button
+                    class="bg-red-500 text-lg text-white px-4 py-2 w-full rounded-lg"
+                  >
+                    Fazer pedido
+                  </button>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/carrinho.js"></script>
   </body>
 </html>
