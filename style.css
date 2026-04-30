@@ -11,3 +11,8 @@ header{
 }
 
 
+body, button, select, form, input, textarea, a{
+    font-family: "Cairo",sans-serif;
+}
+
+
