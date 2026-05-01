@@ -11,6 +11,20 @@ const cardPizzasGd = document.getElementById("card-pizza-gd");
 const botaoFecharPizzaGrande = document.getElementById("btn-fechar-pizza-gd");
 
 
+/*Doces */
+const abrirPizzasDocePq = document.getElementById("pizza-doce-pq");
+const cardPizzasDocePq = document.getElementById("card-pizza-doce-pq");
+const botaoFecharPizzaDocePequena = document.getElementById("btn-fechar-pizza-doce-pq");
+
+const abrirPizzasDoceMd = document.getElementById("pizza-doce-md");
+const cardPizzasDoceMd = document.getElementById("card-pizza-doce-md");
+const botaoFecharPizzaDoceMedia = document.getElementById("btn-fechar-pizza-doce-md");
+
+const abrirPizzasDoceGd = document.getElementById("pizza-doce-gd");
+const cardPizzasDoceGd = document.getElementById("card-pizza-doce-gd");
+const botaoFecharPizzaDoceGrande = document.getElementById("btn-fechar-pizza-doce-gd");
+
+
 
 /*Abrindo modal de pizza pequena */
 abrirPizzasPq.addEventListener("click", () => {
@@ -43,4 +57,35 @@ botaoFecharPizzaGrande.addEventListener("click", () => {
         cardPizzasGd.classList.add("hidden");
 });
 
+/*Pizzas doces */
+
+/*Abrindo modal de pizza doce pequena */
+abrirPizzasDocePq.addEventListener("click", () => {
+    cardPizzasDocePq.classList.remove("hidden");
+});
+
+/*Fechando modal de pizza doce pequena */
+botaoFecharPizzaDocePequena.addEventListener("click", () => {
+        cardPizzasDocePq.classList.add("hidden");
+});
+
+/*Abrindo modal de pizza doce média */
+abrirPizzasDoceMd.addEventListener("click", () => {
+    cardPizzasDoceMd.classList.remove("hidden");
+});
+
+/*Fechando modal de pizza doce média */
+botaoFecharPizzaDoceMedia.addEventListener("click", () => {
+        cardPizzasDoceMd.classList.add("hidden");
+});
+
+/*Abrindo modal de pizza doce grande */
+abrirPizzasDoceGd.addEventListener("click", () => {
+    cardPizzasDoceGd.classList.remove("hidden");
+});
+
+/*Fechando modal de pizza doce grande */
+botaoFecharPizzaDoceGrande.addEventListener("click", () => {
+        cardPizzasDoceGd.classList.add("hidden");
+});
 
