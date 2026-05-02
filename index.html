@@ -2,10 +2,14 @@
 <html lang="pt_br">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
@@ -31,41 +35,44 @@
         <a href="#dois-sabores">Dois sabores</a>
         <a href="#pizzas-doce">Pizzas Doces</a>
         <a href="">Bebida</a>
-        <button id="carrinho">
+        <button id="img-carrinho">
           <img src="./images/carrinho.png" alt="" />
         </button>
       </div>
     </nav>
 
-
-    <div class="w-30 flex justify-center items-center rounded-sm h-10 border-b-2 border-red-500 m-auto shadow-md">
+    <div
+      class="w-30 flex justify-center items-center rounded-sm h-10 border-b-2 border-red-500 m-auto shadow-md"
+    >
       <h1>Pizza Salgada</h1>
     </div>
     <!--seção card salgadas-->
     <section class="flex flex-col items-center gap-4 mb-4 mt-2">
       <div
         class="h-30 gap-4 p-3 w-90 items-center bg-gray-100 flex rounded-xl shadow-md border-b-2 border-red-500"
-        
       >
-        <div class="flex flex-col justify-around gap-2 text-sm" id="pizza-pq"> 
+        <div class="flex flex-col justify-around gap-2 text-sm" id="pizza-pq">
           <p>PIZZA PEQUENA - 25 cm</p>
           <p class="text-gray-500">
             Escolha um sabor ou divida a pizza em dois sabores diferentes.
           </p>
-          <p class="text-lg">A partir de <span class="text-green-500"> R$ 19,99 </span></p>
+          <p class="text-lg">
+            A partir de <span class="text-green-500"> R$ 19,99 </span>
+          </p>
         </div>
       </div>
 
       <div
         class="h-30 gap-4 p-3 w-90 items-center bg-gray-100 flex rounded-xl shadow-md border-b-2 border-red-500"
-        
       >
         <div class="flex flex-col justify-around gap-2 text-sm" id="pizza-md">
           <p>PIZZA MÉDIA - 30 cm</p>
           <p class="text-gray-500">
             Escolha um sabor ou divida a pizza em dois sabores diferentes.
           </p>
-          <p class="text-lg">A partir de <span class="text-green-500"> R$ 24,99 </span></p>
+          <p class="text-lg">
+            A partir de <span class="text-green-500"> R$ 24,99 </span>
+          </p>
         </div>
       </div>
 
@@ -73,22 +80,27 @@
         class="h-30 gap-4 p-3 w-90 items-center bg-gray-100 flex rounded-xl shadow-md border-b-2 border-red-500"
         id="pizza-grande"
       >
-        <div class="flex flex-col justify-around gap-2 text-sm" id="pizza-gd">
+        <div
+          class="flex flex-col justify-around gap-2 text-sm abrirModal"
+          id="pizza-gd"
+        >
           <p>PIZZA GRANDE - 40 cm</p>
           <p class="text-gray-500">
             Escolha um sabor ou divida a pizza em dois sabores diferentes.
           </p>
-          <p class="text-lg">A partir de <span class="text-green-500"> R$ 40,00 </span></p>
+          <p class="text-lg">
+            A partir de <span class="text-green-500"> R$ 40,00 </span>
+          </p>
         </div>
       </div>
     </section>
-<!--FIM PIZZAS SALGADAS-->
+    <!--FIM PIZZAS SALGADAS-->
 
-
-        <!--Montagem das pizzas salgadas-->
+    <!--Montagem das pizzas salgadas-->
     <!--Pizzas pequenas-->
     <div
-      id="card-pizza-pq" class="bg-black/60 w-full h-full fixed top-0 left-0 `z-99` overflow-y-scroll items-center justify-center hidden"
+      id="card-pizza-pq"
+      class="bg-black/60 w-full h-full fixed top-0 left-0 `z-99` overflow-y-scroll items-center justify-center hidden"
     >
       <div class="flex justify-center items-center min-w-[90%] h-full">
         <div
@@ -104,20 +116,18 @@
             </button>
           </div>
 
-          <div class="flex flex-col justify-between h-full">
-            <div id="cardapio-pequenas" class="flex flex-col gap-2 h-[500px] md:max-h-[350px] overflow-y-scroll">
+          <div class="flex flex-col justify-between h-full secao">
+            <div
+              id="cardapio-pequenas"
+              class="flex flex-col gap-2 h-[500px] md:max-h-[350px] overflow-y-scroll"
+            >
               <!--Nova pizza-->
-
-              
-
-
-              
             </div>
 
             <div class="w-full md:max-w-[700px] bg-white p-2">
               <div class="flex items-center w-full justify-center">
                 <button
-                  class="bg-red-500 text-lg text-white px-4 py-2 w-full rounded-lg" id="adicionar-carrinho"
+                  class="bg-red-500 text-lg text-white px-4 py-2 w-full rounded-lg adicionar"
                 >
                   Adicionar ao carrinho
                 </button>
@@ -131,7 +141,8 @@
 
     <!--Pizzas Médias-->
     <div
-      id="card-pizza-md" class="bg-black/60 w-full h-full fixed top-0 left-0 `z-99` overflow-y-scroll items-center justify-center hidden"
+      id="card-pizza-md"
+      class="bg-black/60 w-full h-full fixed top-0 left-0 `z-99` overflow-y-scroll items-center justify-center hidden"
     >
       <div class="flex justify-center items-center min-w-[90%] h-full">
         <div
@@ -147,20 +158,18 @@
             </button>
           </div>
 
-          <div class="flex flex-col justify-between h-full">
-            <div id="cardapio-medias" class="flex flex-col gap-2 h-[500px] md:max-h-[350px] overflow-y-scroll">
+          <div class="flex flex-col justify-between h-full secao">
+            <div
+              id="cardapio-medias"
+              class="flex flex-col gap-2 h-[500px] md:max-h-[350px] overflow-y-scroll"
+            >
               <!--Nova pizza-->
-
-              
-
-
-              
             </div>
 
             <div class="w-full md:max-w-[700px] bg-white p-2">
               <div class="flex items-center w-full justify-center">
                 <button
-                  class="bg-red-500 text-lg text-white px-4 py-2 w-full rounded-lg" id="adicionar-carrinho"
+                  class="bg-red-500 text-lg text-white px-4 py-2 w-full rounded-lg adicionar"
                 >
                   Adicionar ao carrinho
                 </button>
@@ -174,7 +183,8 @@
 
     <!--Pizzas Grandes-->
     <div
-      id="card-pizza-gd" class="bg-black/60 w-full h-full fixed top-0 left-0 `z-99` overflow-y-scroll items-center justify-center hidden"
+      id="card-pizza-gd"
+      class="bg-black/60 w-full h-full fixed top-0 left-0 `z-99` overflow-y-scroll items-center justify-center hidden"
     >
       <div class="flex justify-center items-center min-w-[90%] h-full">
         <div
@@ -190,20 +200,18 @@
             </button>
           </div>
 
-          <div class="flex flex-col justify-between h-full">
-            <div id="cardapio-grandes" class="flex flex-col gap-2 h-[500px] md:max-h-[350px] overflow-y-scroll">
+          <div class="flex flex-col justify-between h-full secao">
+            <div
+              id="cardapio-grandes"
+              class="flex flex-col gap-2 h-[500px] md:max-h-[350px] overflow-y-scroll"
+            >
               <!--Nova pizza-->
-
-              
-
-
-              
             </div>
 
             <div class="w-full md:max-w-[700px] bg-white p-2">
               <div class="flex items-center w-full justify-center">
                 <button
-                  class="bg-red-500 text-lg text-white px-4 py-2 w-full rounded-lg" id="adicionar-carrinho"
+                  class="bg-red-500 text-lg text-white px-4 py-2 w-full rounded-lg adicionar"
                 >
                   Adicionar ao carrinho
                 </button>
@@ -215,35 +223,44 @@
     </div>
     <!--Fim pizzas grandes-->
 
-
-    <div class="w-30 flex justify-center items-center h-10 rounded-sm border-b-2 border-red-500 m-auto shadow-md">
+    <div
+      class="w-30 flex justify-center items-center h-10 rounded-sm border-b-2 border-red-500 m-auto shadow-md"
+    >
       <h1>Pizza Doce</h1>
     </div>
-<!--seção card doce-->
-<section class="flex flex-col items-center gap-4 mb-4 mt-2">
+    <!--seção card doce-->
+    <section class="flex flex-col items-center gap-4 mb-4 mt-2">
       <div
         class="h-30 gap-4 p-3 w-90 items-center bg-gray-100 flex rounded-xl shadow-md border-b-2 border-red-500"
-        
       >
-        <div class="flex flex-col justify-around gap-2 text-sm" id="pizza-doce-pq"> 
+        <div
+          class="flex flex-col justify-around gap-2 text-sm"
+          id="pizza-doce-pq"
+        >
           <p>PIZZA DOCE PEQUENA - 25 cm</p>
           <p class="text-gray-500">
             Escolha um sabor ou divida a pizza em dois sabores diferentes.
           </p>
-          <p class="text-lg">A partir de <span class="text-green-500"> R$ 19,99 </span></p>
+          <p class="text-lg">
+            A partir de <span class="text-green-500"> R$ 19,99 </span>
+          </p>
         </div>
       </div>
 
       <div
         class="h-30 gap-4 p-3 w-90 items-center bg-gray-100 flex rounded-xl shadow-md border-b-2 border-red-500"
-        
       >
-        <div class="flex flex-col justify-around gap-2 text-sm" id="pizza-doce-md">
+        <div
+          class="flex flex-col justify-around gap-2 text-sm"
+          id="pizza-doce-md"
+        >
           <p>PIZZA DOCE MÉDIA - 30 cm</p>
           <p class="text-gray-500">
             Escolha um sabor ou divida a pizza em dois sabores diferentes.
           </p>
-          <p class="text-lg">A partir de <span class="text-green-500"> R$ 24,99 </span></p>
+          <p class="text-lg">
+            A partir de <span class="text-green-500"> R$ 24,99 </span>
+          </p>
         </div>
       </div>
 
@@ -251,12 +268,17 @@
         class="h-30 gap-4 p-3 w-90 items-center bg-gray-100 flex rounded-xl shadow-md border-b-2 border-red-500"
         id="pizza-grande"
       >
-        <div class="flex flex-col justify-around gap-2 text-sm" id="pizza-doce-gd">
+        <div
+          class="flex flex-col justify-around gap-2 text-sm"
+          id="pizza-doce-gd"
+        >
           <p>PIZZA DOCE GRANDE - 40 cm</p>
           <p class="text-gray-500">
             Escolha um sabor ou divida a pizza em dois sabores diferentes.
           </p>
-          <p class="text-lg">A partir de <span class="text-green-500"> R$ 44,99 </span></p>
+          <p class="text-lg">
+            A partir de <span class="text-green-500"> R$ 44,99 </span>
+          </p>
         </div>
       </div>
     </section>
@@ -265,7 +287,8 @@
     <!--Montagem das pizzas doces-->
     <!--Pizzas pequenas doce-->
     <div
-      id="card-pizza-doce-pq" class="bg-black/60 w-full h-full fixed top-0 left-0 `z-99` overflow-y-scroll items-center justify-center hidden"
+      id="card-pizza-doce-pq"
+      class="bg-black/60 w-full h-full fixed top-0 left-0 `z-99` overflow-y-scroll items-center justify-center hidden"
     >
       <div class="flex justify-center items-center min-w-[90%] h-full">
         <div
@@ -281,16 +304,18 @@
             </button>
           </div>
 
-          <div class="flex flex-col justify-between h-full">
-            <div id="cardapio-doce-pequenas" class="flex flex-col gap-2 h-[500px] md:max-h-[350px] overflow-y-scroll">
+          <div class="flex flex-col justify-between h-full secao">
+            <div
+              id="cardapio-doce-pequenas"
+              class="flex flex-col gap-2 h-[500px] md:max-h-[350px] overflow-y-scroll"
+            >
               <!--Nova pizza-->
-              
             </div>
 
             <div class="w-full md:max-w-[700px] bg-white p-2">
               <div class="flex items-center w-full justify-center">
                 <button
-                  class="bg-red-500 text-lg text-white px-4 py-2 w-full rounded-lg" id="adicionar-carrinho"
+                  class="bg-red-500 text-lg text-white px-4 py-2 w-full rounded-lg adicionar"
                 >
                   Adicionar ao carrinho
                 </button>
@@ -304,7 +329,8 @@
 
     <!--Pizzas Médias doce-->
     <div
-      id="card-pizza-doce-md" class="bg-black/60 w-full h-full fixed top-0 left-0 `z-99` overflow-y-scroll items-center justify-center hidden"
+      id="card-pizza-doce-md"
+      class="bg-black/60 w-full h-full fixed top-0 left-0 `z-99` overflow-y-scroll items-center justify-center hidden"
     >
       <div class="flex justify-center items-center min-w-[90%] h-full">
         <div
@@ -320,20 +346,18 @@
             </button>
           </div>
 
-          <div class="flex flex-col justify-between h-full">
-            <div id="cardapio-doce-medias" class="flex flex-col gap-2 h-[500px] md:max-h-[350px] overflow-y-scroll">
+          <div class="flex flex-col justify-between h-full secao">
+            <div
+              id="cardapio-doce-medias"
+              class="flex flex-col gap-2 h-[500px] md:max-h-[350px] overflow-y-scroll"
+            >
               <!--Nova pizza-->
-
-              
-
-
-              
             </div>
 
             <div class="w-full md:max-w-[700px] bg-white p-2">
               <div class="flex items-center w-full justify-center">
                 <button
-                  class="bg-red-500 text-lg text-white px-4 py-2 w-full rounded-lg" id="adicionar-carrinho"
+                  class="bg-red-500 text-lg text-white px-4 py-2 w-full rounded-lg adicionar"
                 >
                   Adicionar ao carrinho
                 </button>
@@ -347,7 +371,8 @@
 
     <!--Pizzas Grandes doce-->
     <div
-      id="card-pizza-doce-gd" class="bg-black/60 w-full h-full fixed top-0 left-0 `z-99` overflow-y-scroll items-center justify-center hidden"
+      id="card-pizza-doce-gd"
+      class="bg-black/60 w-full h-full fixed top-0 left-0 `z-99` overflow-y-scroll items-center justify-center hidden"
     >
       <div class="flex justify-center items-center min-w-[90%] h-full">
         <div
@@ -363,20 +388,18 @@
             </button>
           </div>
 
-          <div class="flex flex-col justify-between h-full">
-            <div id="cardapio-doce-grandes" class="flex flex-col gap-2 h-[500px] md:max-h-[350px] overflow-y-scroll">
+          <div class="flex flex-col justify-between h-full secao">
+            <div
+              id="cardapio-doce-grandes"
+              class="flex flex-col gap-2 h-[500px] md:max-h-[350px] overflow-y-scroll"
+            >
               <!--Nova pizza-->
-
-              
-
-
-              
             </div>
 
             <div class="w-full md:max-w-[700px] bg-white p-2">
               <div class="flex items-center w-full justify-center">
                 <button
-                  class="bg-red-500 text-lg text-white px-4 py-2 w-full rounded-lg" id="adicionar-carrinho"
+                  class="bg-red-500 text-lg text-white px-4 py-2 w-full rounded-lg adicionar"
                 >
                   Adicionar ao carrinho
                 </button>
@@ -388,16 +411,185 @@
     </div>
     <!--Fim pizzas grandes doce-->
 
+    <!--Bebidas-->
 
+    <div
+      class="w-40 flex justify-center items-center h-10 rounded-sm border-b-2 border-red-500 m-auto shadow-md"
+    >
+      <h1>Algo parra beber ?</h1>
+    </div>
+    <section class="flex flex-col items-center gap-4 mb-4 mt-2">
+      <div
+        class="h-30 gap-4 p-3 w-90 items-center bg-gray-100 flex rounded-xl shadow-md border-b-2 border-red-500"
+      >
+        <div class="flex flex-col justify-around gap-2 text-sm" id="bebidas">
+          <p>ESCOLHA ALGO PARA BEBER</p>
+          <p class="text-gray-500">
+            Escolha entre os diferentes sabores de refrigerante.
+          </p>
+          <p class="text-lg">
+            A partir de <span class="text-green-500"> R$ 8,00 </span>
+          </p>
+        </div>
+      </div>
+    </section>
+    <!--Fim bebidas-->
+
+    <!--Card bebidas-->
+    <div
+      id="card-bebidas"
+      class="bg-black/60 w-full h-full fixed top-0 left-0 `z-99` items-center justify-center hidden"
+    >
+      <div class="flex justify-center items-center min-w-[90%] h-full">
+        <div
+          class="h-full md:h-[500px] min-w-full md:min-w-[500px] bg-white p-4 flex flex-col gap-4"
+        >
+          <div class="flex justify-between items-center">
+            <h2 class="text-lg font-bold">Bebidas</h2>
+            <button
+              id="btn-fechar-bebidas"
+              class="text-gray-500 hover:text-gray-700"
+            >
+              Fechar
+            </button>
+          </div>
+
+          <div class="flex flex-col justify-between h-full secao">
+            <div
+              id="catalogo-bebidas"
+              class="flex flex-col gap-2 h-[500px] md:max-h-[350px]"
+            >
+              <!--nova bebida-->
+            </div>
+
+            <div class="w-full md:max-w-[700px] bg-white p-2">
+              <div class="flex items-center w-full justify-center">
+                <button
+                  id="pegar"
+                  class="bg-red-500 text-lg text-white px-4 py-2 w-full rounded-lg adicionar"
+                >
+                  Adicionar ao carrinho
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Fim Card bebidas-->
+
+    <!--Card Form-->
+    <div
+      id="card-bebidas"
+      class="bg-black/60 w-full h-full fixed top-0 left-0 `z-99` items-center justify-center hidden"
+    >
+      <div class="flex justify-center items-center min-w-[90%] h-full">
+        <div
+          class="h-full md:h-[500px] min-w-full md:min-w-[500px] bg-white p-4 flex flex-col gap-4"
+        >
+          <div class="flex justify-between items-center">
+            <h2 class="text-lg font-bold">Entrega-Retirada</h2>
+            <button
+              id="btn-fechar-bebidas"
+              class="text-gray-500 hover:text-gray-700"
+            >
+              Voltar para o carrinho
+            </button>
+          </div>
+
+          <div class="flex flex-col justify-between h-full secao">
+            <div
+              id="catalogo-bebidas"
+              class="flex flex-col gap-2 h-[500px] md:max-h-[350px]"
+            >
+              <form action="" class="flex flex-col">
+                <h1 class="flex justify-center text-lg font-bold text-red-500">
+                  Sua pizza pronta entre 30 e 40 minutos 🔥
+                </h1>
+
+                <label for="nome" class="text-lg mb-1">Digite seu nome</label>
+                <input
+                  id="nome"
+                  type="text"
+                  placeholder="Seu nome aqui..."
+                  class="h-10 border-1 rounded-lg p-2"
+                  required
+                />
+
+                <label for="numero" class="text-lg mb-1">Seu Whatsapp</label>
+                <input
+                  id="numero"
+                  type="text"
+                  required
+                  placeholder="Digite seu Whatsapp aqui..."
+                  class="h-10 border-1 rounded-lg p-2"
+                />
+
+                <div class="flex w-full justify-center gap-2">
+                  <select
+                    id="opcao"
+                    required
+                    class="h-10 w-[50%] border-1 rounded-lg mt-2"
+                  >
+                    <option disabled selected>Entrega/Retirada</option>
+                    <option value="entrega">Entrega 🏍️</option>
+                    <option value="retirada">Retirada 🍕</option>
+                  </select>
+
+                  <select
+                    id="pagamento"
+                    required
+                    class="h-10 w-[50%] border-1 rounded-lg mt-2"
+                  >
+                    <option disabled selected>Pagamento 🤑</option>
+                    <option value="pix">Pix 🍀</option>
+                    <option value="cartao">Cartão 🪪</option>
+                    <option value="dinheiro">Dinheiro 💵</option>
+                  </select>
+                </div>
+
+                <label
+                  id="label-entrega"
+                  for="campoExtra"
+                  class="hidden text-lg mb-1"
+                  >Qual seu endereço?</label
+                >
+                <input
+                  type="text"
+                  id="campoExtra"
+                  required
+                  placeholder="Seu endereço aqui..."
+                  class="h-10 border-1 rounded-lg p-2 hidden"
+                />
+              </form>
+            </div>
+
+            <div class="w-full md:max-w-[700px] bg-white p-2">
+              <div class="flex items-center w-full justify-center">
+                <button
+                  type="submit"
+                  class="bg-red-500 text-lg text-white px-4 py-2 w-full rounded-lg adicionar"
+                >
+                  Enviar Pedido
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Fim Card Formulario-->
 
     <!-- Modal do carrinho -->
     <div
       id="card-carrinho"
-      class="bg-black/60 w-full h-full fixed top-0 left-0 `z-999` overflow-y-scroll items-center justify-center hidden"
+      class="bg-black/60 w-full h-full fixed top-0 left-0 z-50 overflow-y-scroll items-center justify-center"
     >
       <div class="flex justify-center items-center min-w-[90%] h-full">
         <div
-          class="h-full md:h-[500px] min-w-[90%] md:min-w-[620px] bg-white p-4 flex flex-col gap-4"
+          class="h-full md:h-[500px] w-full md:max-w-[620px] bg-white p-4 flex flex-col gap-4"
         >
           <div class="flex justify-between items-center">
             <h2 class="text-lg font-bold">Carrinho</h2>
@@ -409,59 +601,37 @@
             </button>
           </div>
 
-          <div class="flex flex-col justify-between h-full">
-            <div id="itens-carrinho" class="flex flex-col gap-2">
-              <!-- Itens do carrinho serão adicionados aqui dinamicamente -->
-
-              <div
-                class="h-30 md:h-25 gap-2 p-3 md:w-full items-center bg-gray-100 flex flex-col rounded-xl shadow-md cairo"
-              >
-                <div class="flex justify-between gap-2 text-sm w-full">
-                  <div>
-                    <p>Pizza de Calabresa</p>
-                    <p class="text-gray-500">
-                      Pizza saborosa, dividida em 8 fatias, quentinha na sua
-                      mesa.
-                    </p>
-                  </div>
-                  <button
-                    class="h-5 flex justify-center items-center bg-red-500 text-white px-2 py-1 rounded-lg"
-                  >
-                    <p>Remover</p>
-                  </button>
-                </div>
-
-                <div class="flex justify-between w-full gap-2 text-lg">
-                  <p class="text-green-500">R$ 25,00</p>
-                  <div class="bg-gray-300 rounded-lg px-2 flex gap-2">
-                    <button>-</button>
-                    <span class="text-green-500">1</span>
-                    <button>+</button>
-                  </div>
-                </div>
-              </div>
+          <div id="carrinho" class="flex flex-col h-full secao">
+            <!-- 🔥 ocupa todo espaço disponível -->
+            <div id="lista-carrinho" class="flex flex-col gap-2 flex-1 overflow-y-auto">
+              <!-- Itens do carrinho -->
             </div>
 
-            <div class="w-full md:max-w-[620px] bg-white p-2">
-              <p class="text-lg font-bold">
-                Total: R$ <span id="total-carrinho">0,00</span>
-              </p>
-              <div class="flex items-center w-full justify-center">
-                <button
-                  class="bg-red-500 text-lg text-white px-4 py-2 w-full rounded-lg" id="finalizar"
-                >
-                  Fazer pedido
-                </button>
+            <!-- 🔥 fica sempre embaixo -->
+            <div class="h-20">
+              <div class="w-full md:max-w-[620px] bg-white p-2">
+                <p class="text-lg font-bold">
+                  Total: R$ <span id="total">0,00</span>
+                </p>
+
+                <div class="flex items-center w-full justify-center">
+                  <button
+                    class="bg-red-500 text-lg text-white px-4 py-2 w-full rounded-lg"
+                    id="finalizar"
+                  >
+                    Fazer pedido
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    
 
-    <script src="./js/catalogoPizzas.js"></script>
     <script src="./js/carrinho.js"></script>
+    <script src="./js/catalogoPizzas.js"></script>
     <script src="./js/pizzas.js"></script>
+    <script src="./js/logica.js"></script>
   </body>
 </html>

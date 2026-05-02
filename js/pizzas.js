@@ -24,7 +24,18 @@ const abrirPizzasDoceGd = document.getElementById("pizza-doce-gd");
 const cardPizzasDoceGd = document.getElementById("card-pizza-doce-gd");
 const botaoFecharPizzaDoceGrande = document.getElementById("btn-fechar-pizza-doce-gd");
 
+/*Bebidas */
+const abrirBebidas = document.getElementById("bebidas");
+const cardBebidas = document.getElementById("card-bebidas");
+const botaoFecharBebidas = document.getElementById("btn-fechar-bebidas");
 
+document.querySelectorAll(".abrirModal").forEach((card)=>{
+    card.addEventListener("click", (event)=>{
+        event.classList.remove("hidden");
+        console.log("Ismael");
+        
+    })
+})
 
 /*Abrindo modal de pizza pequena */
 abrirPizzasPq.addEventListener("click", () => {
@@ -87,5 +98,15 @@ abrirPizzasDoceGd.addEventListener("click", () => {
 /*Fechando modal de pizza doce grande */
 botaoFecharPizzaDoceGrande.addEventListener("click", () => {
         cardPizzasDoceGd.classList.add("hidden");
+});
+
+/*Abrindo modal de bebidas */
+abrirBebidas.addEventListener("click", () => {
+    cardBebidas.classList.remove("hidden");
+});
+
+/*Fechando modal de bebidas */
+botaoFecharBebidas.addEventListener("click", () => {
+        cardBebidas.classList.add("hidden");
 });
 
