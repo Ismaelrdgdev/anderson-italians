@@ -49,25 +49,7 @@ checkboxes.forEach((checkbox) => {
 
   });
 });
-document.querySelectorAll(".adicionar").forEach((botao) => {
-  botao.addEventListener("click", (e) => {
-    const nomeProduto = e.target.dataset.name;
-    Swal.mixin({
-    toast: true,
-    position: "top-end",
-    showConfirmButton: false,
-    timer: 3000,
-    timerProgressBar: true,
-    didOpen: (toast) => {
-      toast.onmouseenter = Swal.stopTimer;
-      toast.onmouseleave = Swal.resumeTimer;
-    },
-  }).fire({
-    icon: "success",
-    title: "Produto adicionado no carrinho!",
-  });
-  });
-});
+
 
 // selecionar entrega
 const select = document.getElementById("opcao");
@@ -106,6 +88,8 @@ document.querySelectorAll(".adicionar").forEach((botao) => {
     const selecionados = Array.from(
       secao.querySelectorAll(".item:checked")
     ).map((item) => {
+      console.log(secao);
+      
       return {
         nome: item.dataset.sabor,
         ingredientes: item.dataset.ingredientes,
@@ -118,7 +102,6 @@ document.querySelectorAll(".adicionar").forEach((botao) => {
     
     //? adiciona no carrinho global
     selecionados.forEach(item => carrinho.push(item));
-    console.log(carrinho);
 
 
     //? opcional: limpar seleção
@@ -134,11 +117,12 @@ document.querySelectorAll(".adicionar").forEach((botao) => {
   let total = 0;
 
   carrinho.forEach((item, index) => {
-    total += Number(item.preco);
-    console.log(total);
+    total += Number(item.preco) * item.quantidade;
     
-    
-    
+    let valorTotal = document.getElementById("total")
+    valorTotal.innerHTML = total.toFixed(2).toString().replace(".", ",")
+
+
     const div = document.createElement("div");
     div.classList.add("item-carrinho");
 
@@ -147,7 +131,7 @@ document.querySelectorAll(".adicionar").forEach((botao) => {
                 class="h-30 md:h-25 gap-2 p-3 md:w-full items-center bg-gray-100 flex flex-col rounded-xl shadow-md cairo"
               >
                 <div class="flex justify-between gap-2 text-sm w-full">
-                  <div>
+                  <div class="flex flex-col h-auto w-30">
                     <p>${item.nome}</p>
                     <p class="text-gray-500">
                       ${item.ingredientes}
@@ -163,9 +147,9 @@ document.querySelectorAll(".adicionar").forEach((botao) => {
                 <div class="flex justify-between w-full gap-2 text-lg">
                   <p class="text-green-500">R$ ${item.preco}</p>
                   <div class="bg-gray-300 rounded-lg px-2 flex gap-2">
-                    <button >-</button>
+                    <button class= "subtract">-</button>
                     <span class="text-green-500">${item.quantidade}</span>
-                    <button>+</button>
+                    <button class="add">+</button>
                   </div>
                 </div>
               </div>
@@ -183,3 +167,7 @@ renderizarCarrinho()
 
     });
   });
+
+
+  //? aumentar com os inputs
+document.querySelectorAll(".subtract")
