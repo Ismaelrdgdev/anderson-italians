@@ -40,32 +40,38 @@ document.querySelectorAll(".abrirModal").forEach((card)=>{
 /*Abrindo modal de pizza pequena */
 abrirPizzasPq.addEventListener("click", () => {
     cardPizzasPq.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
 });
 
 /*Fechando modal de pizza pequena */
 botaoFecharPizzaPequena.addEventListener("click", () => {
         cardPizzasPq.classList.add("hidden");
+        document.body.style.overflow = "auto";
 });
 
 
 /*Abrindo modal de pizza média */
 abrirPizzasMd.addEventListener("click", () => {
     cardPizzasMd.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
 });
 
 /*Fechando modal de pizza média */
 botaoFecharPizzaMedia.addEventListener("click", () => {
         cardPizzasMd.classList.add("hidden");
+        document.body.style.overflow = "auto";
 });
 
 /*Abrindo modal de pizza grande */
 abrirPizzasGd.addEventListener("click", () => {
     cardPizzasGd.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
 });
 
 /*Fechando modal de pizza grande */
 botaoFecharPizzaGrande.addEventListener("click", () => {
         cardPizzasGd.classList.add("hidden");
+        document.body.style.overflow = "auto";
 });
 
 /*Pizzas doces */
@@ -73,40 +79,48 @@ botaoFecharPizzaGrande.addEventListener("click", () => {
 /*Abrindo modal de pizza doce pequena */
 abrirPizzasDocePq.addEventListener("click", () => {
     cardPizzasDocePq.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
 });
 
 /*Fechando modal de pizza doce pequena */
 botaoFecharPizzaDocePequena.addEventListener("click", () => {
         cardPizzasDocePq.classList.add("hidden");
+        document.body.style.overflow = "auto";
 });
 
 /*Abrindo modal de pizza doce média */
 abrirPizzasDoceMd.addEventListener("click", () => {
     cardPizzasDoceMd.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
 });
 
 /*Fechando modal de pizza doce média */
 botaoFecharPizzaDoceMedia.addEventListener("click", () => {
         cardPizzasDoceMd.classList.add("hidden");
+        document.body.style.overflow = "auto";
 });
 
 /*Abrindo modal de pizza doce grande */
 abrirPizzasDoceGd.addEventListener("click", () => {
     cardPizzasDoceGd.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
 });
 
 /*Fechando modal de pizza doce grande */
 botaoFecharPizzaDoceGrande.addEventListener("click", () => {
         cardPizzasDoceGd.classList.add("hidden");
+        document.body.style.overflow = "auto";
 });
 
 /*Abrindo modal de bebidas */
 abrirBebidas.addEventListener("click", () => {
     cardBebidas.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
 });
 
 /*Fechando modal de bebidas */
 botaoFecharBebidas.addEventListener("click", () => {
         cardBebidas.classList.add("hidden");
+        document.body.style.overflow = "auto";
 });
 

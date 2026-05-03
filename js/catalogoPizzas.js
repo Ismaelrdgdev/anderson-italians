@@ -27,10 +27,10 @@ const pizzasDoces = [
 
 
 const bebidas = [
-  {quantidade: 1, sabor: "Coca-Cola 2L", preco: 14.00},
-  {quantidade: 1, sabor: "Guaraná Antértica 2L", preco: 12.00},
-  {quantidade: 1, sabor: "Kuat", preco: 8.00},
-  {quantidade: 1, sabor: "Sukita", preco: 8.00}
+  {quantidade: 1, sabor: "Coca-Cola 2L", preco: 14.00, ingredientes:"Geladinha na sua mesa"},
+  {quantidade: 1, sabor: "Guaraná Antártica 2L", preco: 12.00, ingredientes:"A mais saborosa"},
+  {quantidade: 1, sabor: "Kuat", preco: 8.00, ingredientes:"Tradicional com o mesmo sabor"},
+  {quantidade: 1, sabor: "Sukita", preco: 8.00, ingredientes:"Combina com o seu pedido"}
 ];
 
 
@@ -46,7 +46,7 @@ container.innerHTML = pizzas.map(item => `
               >
                 <div class="m-2 flex items-center w-full gap-3 text-sm">
 
-                  <input type="checkbox" class="w-5 h-5 item" data-quantidade=${item.quantidade} data-preco=${item.preco.toFixed(2)} data-sabor=${item.sabor} data-ingredientes=${item.ingredientes} />
+                  <input type="checkbox" class="w-5 h-5 item" data-quantidade=${item.quantidade} data-preco=${item.preco.toFixed(2)} data-sabor="${item.sabor}" data-ingredientes=${item.ingredientes} />
                   <div class="flex w-full gap-8 items-center justify-between">
                     <div class="flex flex-col w-full">
                       <p class="md:text-lg">${item.sabor}</p>
@@ -71,7 +71,7 @@ container1.innerHTML = pizzas.map(item => `
               >
                 <div class="m-2 flex items-center w-full gap-3 text-sm mb-2">
 
-                  <input type="checkbox" class="w-5 h-5 item" data-quantidade=${item.quantidade} data-preco=${item.preco1.toFixed(2)} data-sabor=${item.sabor} data-ingredientes=${item.ingredientes} />
+                  <input type="checkbox" class="w-5 h-5 item" data-quantidade=${item.quantidade} data-preco=${item.preco1.toFixed(2)} data-sabor="${item.sabor}" data-ingredientes=${item.ingredientes} />
                   <div class="flex w-full gap-8 items-center justify-between">
                     <div class="flex flex-col w-[80%]">
                       <p class="md:text-lg">${item.sabor}</p>
@@ -95,7 +95,7 @@ container2.innerHTML = pizzas.map(item => `
               >
                 <div class="m-2 flex items-center w-full gap-3 text-sm">
 
-                  <input type="checkbox" class="w-5 h-5 item" data-quantidade=${item.quantidade} data-preco=${item.preco2.toFixed(2)} data-sabor=${item.sabor} data-ingredientes=${item.ingredientes} />
+                  <input type="checkbox" class="w-5 h-5 item" data-quantidade=${item.quantidade} data-preco=${item.preco2.toFixed(2)} data-sabor="${item.sabor}"data-ingredientes=${item.ingredientes} />
                   <div class="flex w-full gap-8 items-center justify-between">
                     <div class="flex flex-col w-[80%]">
                       <p class="md:text-lg">${item.sabor}</p>
@@ -121,7 +121,7 @@ container3.innerHTML = pizzasDoces.map(item => `
               >
                 <div class="m-2 flex items-center w-full gap-3 text-sm">
 
-                  <input type="checkbox" class="w-5 h-5 item" data-quantidade=${item.quantidade} data-preco=${item.preco.toFixed(2)} data-sabor=${item.sabor} data-ingredientes=${item.ingredientes} />
+                  <input type="checkbox" class="w-5 h-5 item" data-quantidade=${item.quantidade} data-preco=${item.preco.toFixed(2)} data-sabor="${item.sabor}"  />
                   <div class="flex w-full gap-8 items-center justify-between">
                     <div class="flex flex-col w-[80%]">
                       <p class="md:text-lg">${item.sabor}</p>
@@ -143,10 +143,11 @@ container4.innerHTML = pizzasDoces.map(item => `
               >
                 <div class="m-2 flex items-center w-full gap-3 text-sm">
 
-                  <input type="checkbox" class="w-5 h-5 item" data-quantidade=${item.quantidade} data-preco=${item.preco1.toFixed(2)} data-sabor=${item.sabor} data-ingredientes=${item.ingredientes}  />
+                  <input type="checkbox" class="w-5 h-5 item" data-quantidade=${item.quantidade} data-preco=${item.preco1.toFixed(2)} data-sabor="${item.sabor}"/>
                   <div class="flex w-full gap-8 items-center justify-between">
                     <div class="flex flex-col w-[80%]">
                       <p class="md:text-lg">${item.sabor}</p>
+                      
                     </div>
 
                     <div class="w-30">
@@ -164,10 +165,11 @@ container5.innerHTML = pizzasDoces.map(item => `
               >
                 <div class="m-2 flex items-center w-full gap-3 text-sm">
 
-                  <input data-quantidade=${item.quantidade} data-preco=${item.preco2.toFixed(2)} data-sabor=${item.sabor} type="checkbox" class="w-5 h-5 item"  />
+                  <input data-quantidade=${item.quantidade} data-preco=${item.preco2.toFixed(2)} data-sabor="${item.sabor}" type="checkbox" class="w-5 h-5 item"  />
                   <div class="flex w-full gap-8 items-center justify-between">
                     <div class="flex flex-col w-[80%]">
                       <p class="md:text-lg">${item.sabor}</p>
+                      
                     </div>
 
                     <div class="w-30">
@@ -185,10 +187,11 @@ refri.innerHTML = bebidas.map(item => `
               >
                 <div class="m-2 flex items-center w-full gap-3 text-sm ">
 
-                  <input data-quantidade=${item.quantidade} data-preco=${item.preco.toFixed(2)} data-sabor=${item.sabor} type="checkbox" class="w-5 h-5 item" />
+                  <input data-quantidade=${item.quantidade} data-preco=${item.preco.toFixed(2)} data-sabor="${item.sabor}" data-ingredientes="${item.ingredientes}" type="checkbox" class="w-5 h-5 item" />
                   <div class= "flex w-full gap-8 items-center justify-between">
                     <div class="flex flex-col w-[80%]">
                       <p class="text-lg">${item.sabor}</p>
+                      
                     </div>
 
                     <div class="w-30">

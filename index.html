@@ -6,6 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
+    
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -116,7 +117,7 @@
             </button>
           </div>
 
-          <div class="flex flex-col justify-between h-full secao">
+          <div class="flex flex-col justify-between secao">
             <div
               id="cardapio-pequenas"
               class="flex flex-col gap-2 h-[500px] md:max-h-[350px] overflow-y-scroll"
@@ -158,7 +159,7 @@
             </button>
           </div>
 
-          <div class="flex flex-col justify-between h-full secao">
+          <div class="flex flex-col justify-between secao">
             <div
               id="cardapio-medias"
               class="flex flex-col gap-2 h-[500px] md:max-h-[350px] overflow-y-scroll"
@@ -200,7 +201,7 @@
             </button>
           </div>
 
-          <div class="flex flex-col justify-between h-full secao">
+          <div class="flex flex-col justify-between secao">
             <div
               id="cardapio-grandes"
               class="flex flex-col gap-2 h-[500px] md:max-h-[350px] overflow-y-scroll"
@@ -288,11 +289,11 @@
     <!--Pizzas pequenas doce-->
     <div
       id="card-pizza-doce-pq"
-      class="bg-black/60 w-full h-full fixed top-0 left-0 `z-99` overflow-y-scroll items-center justify-center hidden"
+      class="bg-black/60 w-full h-full fixed top-0 left-0 z-99 md:overflow-y-scroll items-center justify-center hidden"
     >
       <div class="flex justify-center items-center min-w-[90%] h-full">
         <div
-          class="h-full md:h-[500px] min-w-[90%] md:min-w-[500px] bg-white p-4 flex flex-col gap-4"
+          class="h-full md:h-[500px] w-full md:max-w-[500px] bg-white p-4 flex flex-col gap-4"
         >
           <div class="flex justify-between items-center">
             <h2 class="text-lg font-bold">Pizza Pequena - 25 cm</h2>
@@ -304,10 +305,10 @@
             </button>
           </div>
 
-          <div class="flex flex-col justify-between h-full secao">
+          <div class="flex flex-col justify-between secao">
             <div
               id="cardapio-doce-pequenas"
-              class="flex flex-col gap-2 h-[500px] md:max-h-[350px] overflow-y-scroll"
+              class="flex flex-col gap-2 h-[500px] md:max-h-[350px] md:overflow-y-scroll"
             >
               <!--Nova pizza-->
             </div>
@@ -334,7 +335,7 @@
     >
       <div class="flex justify-center items-center min-w-[90%] h-full">
         <div
-          class="h-full md:h-[500px] min-w-[90%] md:min-w-[500px] bg-white p-4 flex flex-col gap-4"
+          class="h-full md:h-[500px] w-full md:max-w-[500px] bg-white p-4 flex flex-col gap-4"
         >
           <div class="flex justify-between items-center">
             <h2 class="text-lg font-bold">Pizza Média - 30 cm</h2>
@@ -346,10 +347,10 @@
             </button>
           </div>
 
-          <div class="flex flex-col justify-between h-full secao">
+          <div class="flex flex-col justify-between secao">
             <div
               id="cardapio-doce-medias"
-              class="flex flex-col gap-2 h-[500px] md:max-h-[350px] overflow-y-scroll"
+              class="flex flex-col gap-2 h-[500px] md:max-h-[350px] md:overflow-y-scroll"
             >
               <!--Nova pizza-->
             </div>
@@ -376,7 +377,7 @@
     >
       <div class="flex justify-center items-center min-w-[90%] h-full">
         <div
-          class="h-full md:h-[500px] min-w-[90%] md:min-w-[500px] bg-white p-4 flex flex-col gap-4"
+          class="h-full md:h-[500px] w-full md:max-w-[500px] bg-white p-4 flex flex-col gap-4"
         >
           <div class="flex justify-between items-center">
             <h2 class="text-lg font-bold">Pizza Grande - 40 cm</h2>
@@ -388,10 +389,10 @@
             </button>
           </div>
 
-          <div class="flex flex-col justify-between h-full secao">
+          <div class="flex flex-col justify-between secao">
             <div
               id="cardapio-doce-grandes"
-              class="flex flex-col gap-2 h-[500px] md:max-h-[350px] overflow-y-scroll"
+              class="flex flex-col gap-2 h-[500px] md:max-h-[350px] md:overflow-y-scroll"
             >
               <!--Nova pizza-->
             </div>
@@ -454,7 +455,7 @@
             </button>
           </div>
 
-          <div class="flex flex-col justify-between h-full secao">
+          <div class="flex flex-col justify-between secao">
             <div
               id="catalogo-bebidas"
               class="flex flex-col gap-2 h-[500px] md:max-h-[350px]"
@@ -481,17 +482,17 @@
 
     <!--Card Form-->
     <div
-      id="card-bebidas"
+      id="card-entrega"
       class="bg-black/60 w-full h-full fixed top-0 left-0 `z-99` items-center justify-center hidden"
     >
       <div class="flex justify-center items-center min-w-[90%] h-full">
         <div
-          class="h-full md:h-[500px] min-w-full md:min-w-[500px] bg-white p-4 flex flex-col gap-4"
+          class="h-full md:h-[700px] min-w-full md:min-w-[500px] bg-white p-4 flex flex-col gap-4"
         >
           <div class="flex justify-between items-center">
             <h2 class="text-lg font-bold">Entrega-Retirada</h2>
             <button
-              id="btn-fechar-bebidas"
+              id="btn-fechar-entrega"
               class="text-gray-500 hover:text-gray-700"
             >
               Voltar para o carrinho
@@ -503,7 +504,7 @@
               id="catalogo-bebidas"
               class="flex flex-col gap-2 h-[500px] md:max-h-[350px]"
             >
-              <form action="" class="flex flex-col">
+              <form name="formEntrega" class="flex flex-col">
                 <h1 class="flex justify-center text-lg font-bold text-red-500">
                   Sua pizza pronta entre 30 e 40 minutos 🔥
                 </h1>
@@ -556,22 +557,34 @@
                   >Qual seu endereço?</label
                 >
                 <input
-                  type="text"
+                name="Endereco"
                   id="campoExtra"
-                  required
                   placeholder="Seu endereço aqui..."
                   class="h-10 border-1 rounded-lg p-2 hidden"
                 />
+
+                <div class="flex flex-col w-full hidden" id="campoPix">
+                  <label id="label-pix" for="valuePix" class="text-lg mb-1">Nossa chave Pix</label>
+
+                  <div class="flex w-full gap-2">
+                    <input class="text-center h-10 border-1 rounded-lg p-2 w-[70%]" type="text" id="valuePix"
+                    value="000.000.000-00" readonly>
+
+                    <button type="button" onclick="copiarPix()" id="copyButton" class="h-10 border-1 border-black rounded-lg p-2 bg-rose-500 text-white w-[30%] ">Copiar</button>
+                  </div>
+
+                  <h1 class="text-lg text-red-500 font-bold">Após o pagamento, nos envie o comprovante !</h1>
+                </div>
+                
               </form>
             </div>
 
             <div class="w-full md:max-w-[700px] bg-white p-2">
               <div class="flex items-center w-full justify-center">
-                <button
-                  type="submit"
-                  class="bg-red-500 text-lg text-white px-4 py-2 w-full rounded-lg adicionar"
+                <button id="enviarPedido"
+                  class="bg-red-500 text-lg text-white px-4 py-2 w-full rounded-lg flex justify-center gap-4"
                 >
-                  Enviar Pedido
+                  Enviar Pedido <img src="./images/whatsapp.svg" alt="logo-whats">
                 </button>
               </div>
             </div>
@@ -603,8 +616,10 @@
 
           <div id="carrinho" class="flex flex-col h-full md:h-[420px] secao">
             <!-- 🔥 ocupa todo espaço disponível -->
+
+            <!-- Itens do carrinho -->
             <div id="lista-carrinho" class="flex flex-col gap-2 flex-1 overflow-y-auto">
-              <!-- Itens do carrinho -->
+              
             </div>
 
             <!-- 🔥 fica sempre embaixo -->
@@ -619,7 +634,7 @@
                     class="bg-red-500 text-lg text-white px-4 py-2 w-full rounded-lg"
                     id="finalizar"
                   >
-                    Fazer pedido
+                    Preencher Entrega ou Retirada
                   </button>
                 </div>
               </div>
