@@ -14,10 +14,12 @@ const selectPagamento = document.getElementById("pagamento");
 const pix = document.getElementById("campoPix");
 
 const carrinho = [];
+console.log(carrinho);
 
 /*Abrindo carrinho */
 botaoCarrinho.addEventListener("click", () => {
   card.classList.remove("hidden");
+  console.log(carrinho);
 });
 
 /*Fechando Carrinho */
@@ -26,18 +28,18 @@ fecharCarrinho.addEventListener("click", () => {
 });
 
 /*Só deixa selecionar 2 checkbox */
-const checkbox = document.querySelectorAll(".item");
+// const checkbox = document.querySelectorAll(".item");
 
-checkbox.forEach((checkbox) => {
-  checkbox.addEventListener("change", () => {
-    const marcados = document.querySelectorAll(".item:checked");
+// checkbox.forEach((checkbox) => {
+//   checkbox.addEventListener("change", () => {
+//     const marcados = document.querySelectorAll(".item:checked");
 
-    if (marcados.length > 2) {
-      checkbox.checked = false;
-      alert("Você só pode escolher até 2 sabores!");
-    }
-  });
-});
+//     if (marcados.length > 2) {
+//       checkbox.checked = false;
+//       alert("Você só pode escolher até 2 sabores!");
+//     }
+//   });
+// });
 
 /*Recuperando os valores dos checkbox */
 document.querySelectorAll(".adicionar").forEach((botao) => {
@@ -207,8 +209,15 @@ finalizar.addEventListener("click", () => {
       icon: "success",
       title: "Ir para Entrega!",
     });
+    console.log(carrinho);
   }
 });
 
 //? FUNÇÃO IR PARA ENTREGA
 function dadosEntrega() {}
+
+//? VOLTAR PARA O CARRINHO
+voltarCarrinho.addEventListener("click", () => {
+  formEntrega.classList.add("hidden");
+  card.classList.remove("hidden");
+});
