@@ -14,18 +14,20 @@ const pizzas = [
 ];
 
 const pizzasDoces = [
-  {quantidade: 1, sabor:"MM", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:19.99, preco1:24.99, preco2:44.99},
-    {quantidade: 1, sabor:"Prestígio", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:19.99, preco1:24.99, preco2:44.99},
-    {quantidade: 1, sabor:"Doce de Leite", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:20.99, preco1:24.99, preco2:44.99},
-    {quantidade: 1, sabor:"Banana Nevada", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1:29.99, preco2:44.99},
-    {quantidade: 1, sabor:"Amendoim", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1:34.99, preco2:44.99},
-    {quantidade: 1, sabor:"Ovomaltine", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1:34.99, preco2:55.99},
-    {quantidade: 1, sabor:"Romeu e Julieta", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1:34.99, preco2:53.99 },
-    {quantidade: 1, sabor:"Nutela", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1:34.99, preco2:49.99},
-    {quantidade: 1, sabor:"Brigadeiro", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:19.99, preco1:24.99, preco2:44.99}
+  {quantidade: 1, sabor:"MM", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:19.99, preco1:24.99, preco2:44.99, ingredientes:""},
+  {quantidade: 1, sabor:"Prestígio", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:19.99, preco1:24.99, preco2:44.99, ingredientes:""},
+  {quantidade: 1, sabor:"Doce de Leite", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:20.99, preco1:24.99, preco2:44.99, ingredientes:""},
+    {quantidade: 1, sabor:"Banana Nevada", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1:29.99, preco2:44.99, ingredientes:""},
+    {quantidade: 1, sabor:"Amendoim", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1:34.99, preco2:44.99, ingredientes:""},
+    {quantidade: 1, sabor:"Ovomaltine", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1:34.99, preco2:55.99, ingredientes:""},
+    {quantidade: 1, sabor:"Romeu e Julieta", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1:34.99, preco2:53.99, ingredientes:"" },
+    {quantidade: 1, sabor:"Nutela", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1:34.99, preco2:49.99, ingredientes:""},
+    {quantidade: 1, sabor:"Brigadeiro", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:19.99, preco1:24.99, preco2:44.99, ingredientes:""}
 ];
 
-const pizzasVariadas = [pizzas, pizzasDoces].flat();
+const pizzasVariadas = [pizzas,pizzasDoces].flat();
+
+
 
 
 const bebidas = [
@@ -48,7 +50,7 @@ container.innerHTML = pizzas.map(item => `
               >
                 <div class="m-2 flex items-center w-full gap-3 text-sm">
 
-                  <input type="checkbox" class="w-5 h-5 item" data-quantidade=${item.quantidade} data-preco=${item.preco.toFixed(2)} data-sabor="${item.sabor}" data-ingredientes=${item.ingredientes} />
+                  <input type="checkbox" class="w-5 h-5 item" data-tamanho=${item.tamanho} data-quantidade=${item.quantidade} data-preco=${item.preco.toFixed(2)} data-sabor="${item.sabor}" data-ingredientes=${item.ingredientes} />
                   <div class="flex w-full gap-8 items-center justify-between">
                     <div class="flex flex-col w-full">
                       <p class="md:text-lg">${item.sabor}</p>
@@ -73,7 +75,7 @@ container1.innerHTML = pizzas.map(item => `
               >
                 <div class="m-2 flex items-center w-full gap-3 text-sm mb-2">
 
-                  <input type="checkbox" class="w-5 h-5 item" data-quantidade=${item.quantidade} data-preco=${item.preco1.toFixed(2)} data-sabor="${item.sabor}" data-ingredientes=${item.ingredientes} />
+                  <input type="checkbox" class="w-5 h-5 item" data-tamanho=${item.tamanho2} data-quantidade=${item.quantidade} data-preco=${item.preco1.toFixed(2)} data-sabor="${item.sabor}" data-ingredientes=${item.ingredientes} />
                   <div class="flex w-full gap-8 items-center justify-between">
                     <div class="flex flex-col w-[80%]">
                       <p class="md:text-lg">${item.sabor}</p>
@@ -97,7 +99,7 @@ container2.innerHTML = pizzas.map(item => `
               >
                 <div class="m-2 flex items-center w-full gap-3 text-sm">
 
-                  <input type="checkbox" class="w-5 h-5 item" data-quantidade=${item.quantidade} data-preco=${item.preco2.toFixed(2)} data-sabor="${item.sabor}"data-ingredientes=${item.ingredientes} />
+                  <input type="checkbox" class="w-5 h-5 item" data-tamanho=${item.tamanho3} data-quantidade=${item.quantidade} data-preco=${item.preco2.toFixed(2)} data-sabor="${item.sabor}"data-ingredientes=${item.ingredientes} />
                   <div class="flex w-full gap-8 items-center justify-between">
                     <div class="flex flex-col w-[80%]">
                       <p class="md:text-lg">${item.sabor}</p>
@@ -123,7 +125,7 @@ container3.innerHTML = pizzasDoces.map(item => `
               >
                 <div class="m-2 flex items-center w-full gap-3 text-sm">
 
-                  <input type="checkbox" class="w-5 h-5 item" data-quantidade=${item.quantidade} data-preco=${item.preco.toFixed(2)} data-sabor="${item.sabor}"  />
+                  <input type="checkbox" class="w-5 h-5 item" data-tamanho=${item.tamanho} data-quantidade=${item.quantidade} data-preco=${item.preco.toFixed(2)} data-sabor="${item.sabor}"  />
                   <div class="flex w-full gap-8 items-center justify-between">
                     <div class="flex flex-col w-[80%]">
                       <p class="md:text-lg">${item.sabor}</p>
@@ -145,7 +147,7 @@ container4.innerHTML = pizzasDoces.map(item => `
               >
                 <div class="m-2 flex items-center w-full gap-3 text-sm">
 
-                  <input type="checkbox" class="w-5 h-5 item" data-quantidade=${item.quantidade} data-preco=${item.preco1.toFixed(2)} data-sabor="${item.sabor}"/>
+                  <input type="checkbox" class="w-5 h-5 item" data-tamanho=${item.tamanho2} data-quantidade=${item.quantidade} data-preco=${item.preco1.toFixed(2)} data-sabor="${item.sabor}"/>
                   <div class="flex w-full gap-8 items-center justify-between">
                     <div class="flex flex-col w-[80%]">
                       <p class="md:text-lg">${item.sabor}</p>
@@ -167,7 +169,7 @@ container5.innerHTML = pizzasDoces.map(item => `
               >
                 <div class="m-2 flex items-center w-full gap-3 text-sm">
 
-                  <input data-quantidade=${item.quantidade} data-preco=${item.preco2.toFixed(2)} data-sabor="${item.sabor}" type="checkbox" class="w-5 h-5 item"  />
+                  <input data-quantidade=${item.quantidade} data-tamanho=${item.tamanho3} data-preco=${item.preco2.toFixed(2)} data-sabor="${item.sabor}" type="checkbox" class="w-5 h-5 item"  />
                   <div class="flex w-full gap-8 items-center justify-between">
                     <div class="flex flex-col w-[80%]">
                       <p class="md:text-lg">${item.sabor}</p>
@@ -209,7 +211,7 @@ refri.innerHTML = bebidas.map(item => `
 
 const variadas = document.getElementById('cardapio-variadas');
 
-variadas.innerHTML = pizzas.map(item => `
+variadas.innerHTML = pizzasVariadas.map(item => `
   <div class="h-20 md:h-20 md:w-full items-center bg-gray-100 flex rounded-xl shadow-md cairo"
               >
                 <div class="m-2 flex items-center w-full gap-3 text-sm">
@@ -219,7 +221,7 @@ variadas.innerHTML = pizzas.map(item => `
                     <div class="flex flex-col w-full">
                       <p class="md:text-lg">${item.sabor}</p>
                       <p class="text-gray-500">
-                        ${item.ingredientes.join(", ")}
+                        ${item.ingredientes}
                       </p>
                     </div>
 
@@ -231,5 +233,51 @@ variadas.innerHTML = pizzas.map(item => `
               </div>
 `).join('');
 
+const variadas2 = document.getElementById('cardapio-variadas2');
 
+variadas2.innerHTML = pizzasVariadas.map(item => `
+  <div class="h-20 md:h-20 md:w-full items-center bg-gray-100 flex rounded-xl shadow-md cairo"
+              >
+                <div class="m-2 flex items-center w-full gap-3 text-sm">
+
+                  <input type="checkbox" class="w-5 h-5 item" data-tamanho=${item.tamanho2} data-quantidade=${item.quantidade} data-preco=${item.preco2.toFixed(2)} data-sabor="${item.sabor}" data-ingredientes=${item.ingredientes} />
+                  <div class="flex w-full gap-8 items-center justify-between">
+                    <div class="flex flex-col w-full">
+                      <p class="md:text-lg">${item.sabor}</p>
+                      <p class="text-gray-500">
+                        ${item.ingredientes}
+                      </p>
+                    </div>
+
+                    <div class=" w-30">
+                      <p class="text-green-500 md:text-lg">R$ ${item.preco2.toString().replace("." , ",")}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+`).join('');
+
+const variadas3 = document.getElementById('cardapio-variadas3');
+
+variadas3.innerHTML = pizzasVariadas.map(item => `
+  <div class="h-20 md:h-20 md:w-full items-center bg-gray-100 flex rounded-xl shadow-md cairo"
+              >
+                <div class="m-2 flex items-center w-full gap-3 text-sm">
+
+                  <input type="checkbox" class="w-5 h-5 item" data-tamanho=${item.tamanho3} data-quantidade=${item.quantidade} data-preco=${item.preco2.toFixed(2)} data-sabor="${item.sabor}" data-ingredientes=${item.ingredientes} />
+                  <div class="flex w-full gap-8 items-center justify-between">
+                    <div class="flex flex-col w-full">
+                      <p class="md:text-lg">${item.sabor}</p>
+                      <p class="text-gray-500">
+                        ${item.ingredientes}
+                      </p>
+                    </div>
+
+                    <div class=" w-30">
+                      <p class="text-green-500 md:text-lg">R$ ${item.preco2.toString().replace("." , ",")}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+`).join('');
 ///FAZER OS DEMAIS TAMANHOS DAS PIZZAS VARIADAS

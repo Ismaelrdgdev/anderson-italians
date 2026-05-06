@@ -110,10 +110,9 @@ document.querySelectorAll(".adicionar").forEach((botao) => {
     // 🍕🍕 meio a meio
     if (selecionados.length === 2) {
       const [s1, s2] = selecionados;
-
       produtoFinal = {
         nome: `${s1.nome} / ${s2.nome}`,
-        preco:Number(s1.preco + s2.preco) / 2, // 🔥 regra do meio a meio
+        preco: Math.max(s1.preco, s2.preco), // 🔥 regra do meio a meio
         ingredientes: "meio a meio",
         tamanho: s1.tamanho,
         quantidade: s1.quantidade,

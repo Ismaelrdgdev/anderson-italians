@@ -28,6 +28,14 @@ const abrirPizzasVariadas = document.getElementById("pizza-variadas");
 const cardPizzasVariadas = document.getElementById("card-pizza-variadas");
 const botaoFecharPizzaVariadas = document.getElementById("btn-fechar-pizza-variadas");
 
+const abrirPizzasVariadas2 = document.getElementById("pizza-variadas2");
+const cardPizzasVariadas2 = document.getElementById("card-pizza-variadas2");
+const botaoFecharPizzaVariadas2 = document.getElementById("btn-fechar-pizza-variadas2");
+
+const abrirPizzasVariadas3 = document.getElementById("pizza-variadas3");
+const cardPizzasVariadas3 = document.getElementById("card-pizza-variadas3");
+const botaoFecharPizzaVariadas3 = document.getElementById("btn-fechar-pizza-variadas3");
+
 
 
 
@@ -40,7 +48,6 @@ const botaoFecharBebidas = document.getElementById("btn-fechar-bebidas");
 document.querySelectorAll(".abrirModal").forEach((card)=>{
     card.addEventListener("click", (event)=>{
         event.classList.remove("hidden");
-        console.log("Ismael");
         
     })
 })
@@ -142,6 +149,31 @@ abrirPizzasVariadas.addEventListener("click", () => {
 /*Fechando modal de pizza variadas */
 botaoFecharPizzaVariadas.addEventListener("click", () => {
         cardPizzasVariadas.classList.add("hidden");
+        document.body.style.overflow = "auto";
+});
+
+/*Abrindo modal de pizza variadas2 */
+abrirPizzasVariadas2.addEventListener("click", () => {
+    cardPizzasVariadas2.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
+    
+});
+
+/*Fechando modal de pizza variadas2 */
+botaoFecharPizzaVariadas2.addEventListener("click", () => {
+        cardPizzasVariadas2.classList.add("hidden");
+        document.body.style.overflow = "auto";
+});
+/*Abrindo modal de pizza variadas3 */
+abrirPizzasVariadas3.addEventListener("click", () => {
+    cardPizzasVariadas3.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
+    
+});
+
+/*Fechando modal de pizza variadas3 */
+botaoFecharPizzaVariadas3.addEventListener("click", () => {
+        cardPizzasVariadas3.classList.add("hidden");
         document.body.style.overflow = "auto";
 });
 
