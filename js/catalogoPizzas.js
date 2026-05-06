@@ -1,29 +1,31 @@
 const pizzas = [
-    {quantidade: 1, sabor:"Calabresa", preco:19.99, preco1: 24.99, preco2:44.99, ingredientes:["Molho", "Mussarela","Calabresa","Oregano"]},
-    {quantidade: 1, sabor:"Calabresa com Catupiry", preco:22.99, preco1: 27.99, preco2:47.99, ingredientes:["Molho", "Mussarela", "Calabresa", "Catupiry"]},
-    {quantidade: 1, sabor:"Frango com Cheeda ", preco:24.99, preco1: 24.99, preco2:44.99, ingredientes:["Molho", "Mussarela", "Frango", "Cheeda", "Oregano"]},
-    {quantidade: 1, sabor:"Portuguesa", preco:19.99, preco1: 24.99, preco2:44.99, ingredientes:["Molho", "Mussarela", "Presunto", "Tomate", "Pimentão", "Ovo", "Milho", "Ervilha", "Cebola", "Oregano"]},
-    {quantidade: 1, sabor:"Mista", preco:19.99, preco1: 24.99, preco2:44.99, ingredientes:["Molho", "Mussarela", "Presunto", "Calabresa", "Orégano"]},
-    {quantidade: 1, sabor:"Tomate", preco:19.99, preco1: 24.99, preco2:40.00, ingredientes:["Molho", "Mussarela", "Tomate", "Oregano"]},
-    {quantidade: 1, sabor:"Mussarela", preco:19.99, preco1: 24.99, preco2:44.99, ingredientes:["Molho", "Mussarela", "Oregano"]},
-    {quantidade: 1, sabor:"4 Queijos", preco:24.99, preco1: 34.99, preco2:54.99, ingredientes:["Molho", "Mussarela", "Parmesão", "Provolone", "Catupiry", "Oregano"]},
-    {quantidade: 1, sabor:"Nevada", preco:24.99, preco1: 29.99, preco2:44.99, ingredientes:["Creme de leite", "Mussarela", "Chocolate branco", "Açucar", "Canela", "Banana"]},
-    {quantidade: 1, sabor:"Nutela",preco:24.99, preco1: 34.99, preco2:49.99, ingredientes:["Creme de leite", "Nutela"]},
-    {quantidade: 1, sabor:"Bacon", preco:24.99, preco1: 34.99, preco2:54.99, ingredientes:["Molho", "Mussarela", "Bacon", "Ovos", "Oregano"]},
-    {quantidade: 1, sabor:"Bacon com Catupiry", preco:24.99, preco1: 37.99, preco2:57.99, ingredientes:["Molho", "Mussarela", "Bacon", "Catupiry", "Oregano"]},
+    {quantidade: 1, sabor:"Calabresa", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:19.99, preco1: 24.99, preco2:44.99, ingredientes:["Molho", "Mussarela","Calabresa","Oregano"]},
+    {quantidade: 1, sabor:"Calabresa com Catupiry", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:22.99, preco1: 27.99, preco2:47.99, ingredientes:["Molho", "Mussarela", "Calabresa", "Catupiry"]},
+    {quantidade: 1, sabor:"Frango com Cheeda ", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1: 24.99, preco2:44.99, ingredientes:["Molho", "Mussarela", "Frango", "Cheeda", "Oregano"]},
+    {quantidade: 1, sabor:"Portuguesa", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:19.99, preco1: 24.99, preco2:44.99, ingredientes:["Molho", "Mussarela", "Presunto", "Tomate", "Pimentão", "Ovo", "Milho", "Ervilha", "Cebola", "Oregano"]},
+    {quantidade: 1, sabor:"Mista", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:19.99, preco1: 24.99, preco2:44.99, ingredientes:["Molho", "Mussarela", "Presunto", "Calabresa", "Orégano"]},
+    {quantidade: 1, sabor:"Tomate", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:19.99, preco1: 24.99, preco2:40.00, ingredientes:["Molho", "Mussarela", "Tomate", "Oregano"]},
+    {quantidade: 1, sabor:"Mussarela", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:19.99, preco1: 24.99, preco2:44.99, ingredientes:["Molho", "Mussarela", "Oregano"]},
+    {quantidade: 1, sabor:"4 Queijos", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1: 34.99, preco2:54.99, ingredientes:["Molho", "Mussarela", "Parmesão", "Provolone", "Catupiry", "Oregano"]},
+    {quantidade: 1, sabor:"Nevada", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1: 29.99, preco2:44.99, ingredientes:["Creme de leite", "Mussarela", "Chocolate branco", "Açucar", "Canela", "Banana"]},
+    {quantidade: 1, sabor:"Nutela", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1: 34.99, preco2:49.99, ingredientes:["Creme de leite", "Nutela"]},
+    {quantidade: 1, sabor:"Bacon", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1: 34.99, preco2:54.99, ingredientes:["Molho", "Mussarela", "Bacon", "Ovos", "Oregano"]},
+    {quantidade: 1, sabor:"Bacon com Catupiry", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1: 37.99, preco2:57.99, ingredientes:["Molho", "Mussarela", "Bacon", "Catupiry", "Oregano"]},
 ];
 
 const pizzasDoces = [
-  {quantidade: 1, sabor:"MM", preco:19.99, preco1:24.99, preco2:44.99},
-    {quantidade: 1, sabor:"Prestígio", preco:19.99, preco1:24.99, preco2:44.99},
-    {quantidade: 1, sabor:"Doce de Leite", preco:20.99, preco1:24.99, preco2:44.99},
-    {quantidade: 1, sabor:"Banana Nevada", preco:24.99, preco1:29.99, preco2:44.99},
-    {quantidade: 1, sabor:"Amendoim", preco:24.99, preco1:34.99, preco2:44.99},
-    {quantidade: 1, sabor:"Ovomaltine", preco:24.99, preco1:34.99, preco2:55.99},
-    {quantidade: 1, sabor:"Romeu e Julieta", preco:24.99, preco1:34.99, preco2:53.99 },
-    {quantidade: 1, sabor:"Nutela", preco:24.99, preco1:34.99, preco2:49.99},
-    {quantidade: 1, sabor:"Brigadeiro", preco:19.99, preco1:24.99, preco2:44.99}
-]
+  {quantidade: 1, sabor:"MM", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:19.99, preco1:24.99, preco2:44.99},
+    {quantidade: 1, sabor:"Prestígio", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:19.99, preco1:24.99, preco2:44.99},
+    {quantidade: 1, sabor:"Doce de Leite", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:20.99, preco1:24.99, preco2:44.99},
+    {quantidade: 1, sabor:"Banana Nevada", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1:29.99, preco2:44.99},
+    {quantidade: 1, sabor:"Amendoim", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1:34.99, preco2:44.99},
+    {quantidade: 1, sabor:"Ovomaltine", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1:34.99, preco2:55.99},
+    {quantidade: 1, sabor:"Romeu e Julieta", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1:34.99, preco2:53.99 },
+    {quantidade: 1, sabor:"Nutela", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1:34.99, preco2:49.99},
+    {quantidade: 1, sabor:"Brigadeiro", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:19.99, preco1:24.99, preco2:44.99}
+];
+
+const pizzasVariadas = [pizzas, pizzasDoces].flat();
 
 
 const bebidas = [
@@ -201,3 +203,33 @@ refri.innerHTML = bebidas.map(item => `
                 </div>
               </div>
 `).join('');
+
+
+//? RENDERIZANDO TODAS AS PIZZAS-doce e salgada
+
+const variadas = document.getElementById('cardapio-variadas');
+
+variadas.innerHTML = pizzas.map(item => `
+  <div class="h-20 md:h-20 md:w-full items-center bg-gray-100 flex rounded-xl shadow-md cairo"
+              >
+                <div class="m-2 flex items-center w-full gap-3 text-sm">
+
+                  <input type="checkbox" class="w-5 h-5 item" data-tamanho=${item.tamanho} data-quantidade=${item.quantidade} data-preco=${item.preco.toFixed(2)} data-sabor="${item.sabor}" data-ingredientes=${item.ingredientes} />
+                  <div class="flex w-full gap-8 items-center justify-between">
+                    <div class="flex flex-col w-full">
+                      <p class="md:text-lg">${item.sabor}</p>
+                      <p class="text-gray-500">
+                        ${item.ingredientes.join(", ")}
+                      </p>
+                    </div>
+
+                    <div class=" w-30">
+                      <p class="text-green-500 md:text-lg">R$ ${item.preco.toString().replace("." , ",")}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+`).join('');
+
+
+///FAZER OS DEMAIS TAMANHOS DAS PIZZAS VARIADAS

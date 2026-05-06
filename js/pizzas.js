@@ -24,6 +24,14 @@ const abrirPizzasDoceGd = document.getElementById("pizza-doce-gd");
 const cardPizzasDoceGd = document.getElementById("card-pizza-doce-gd");
 const botaoFecharPizzaDoceGrande = document.getElementById("btn-fechar-pizza-doce-gd");
 
+const abrirPizzasVariadas = document.getElementById("pizza-variadas");
+const cardPizzasVariadas = document.getElementById("card-pizza-variadas");
+const botaoFecharPizzaVariadas = document.getElementById("btn-fechar-pizza-variadas");
+
+
+
+
+
 /*Bebidas */
 const abrirBebidas = document.getElementById("bebidas");
 const cardBebidas = document.getElementById("card-bebidas");
@@ -123,4 +131,19 @@ botaoFecharBebidas.addEventListener("click", () => {
         cardBebidas.classList.add("hidden");
         document.body.style.overflow = "auto";
 });
+
+/*Abrindo modal de pizza variadas */
+abrirPizzasVariadas.addEventListener("click", () => {
+    cardPizzasVariadas.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
+    
+});
+
+/*Fechando modal de pizza variadas */
+botaoFecharPizzaVariadas.addEventListener("click", () => {
+        cardPizzasVariadas.classList.add("hidden");
+        document.body.style.overflow = "auto";
+});
+
+
 

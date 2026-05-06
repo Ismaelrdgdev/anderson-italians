@@ -25,6 +25,8 @@ botaoCarrinho.addEventListener("click", () => {
 /*Fechando Carrinho */
 fecharCarrinho.addEventListener("click", () => {
   card.classList.add("hidden");
+  const secao = e.target.closest(".secao");
+  
 });
 
 /*Só deixa selecionar 2 checkbox */
@@ -40,6 +42,34 @@ fecharCarrinho.addEventListener("click", () => {
 //     }
 //   });
 // });
+
+
+//? Checkbox → capturar + limitar seleção
+document.addEventListener("change", (e) => {
+  if (!e.target.classList.contains("item")) return;
+
+  const checkbox = e.target;
+  const secao = checkbox.closest(".secao");
+
+  const itens = secao.querySelectorAll(".item");
+  const selecionados = secao.querySelectorAll(".item:checked");
+
+  // 🔥 captura instantânea
+  console.log({
+    nome: checkbox.dataset.sabor,
+    preco: parseFloat(checkbox.dataset.preco),
+    marcado: checkbox.checked
+  });
+
+  // 🔒 limita a 2
+  if (selecionados.length >= 2) {
+    itens.forEach((i) => {
+      if (!i.checked) i.disabled = true;
+    });
+  } else {
+    itens.forEach((i) => (i.disabled = false));
+  }
+});
 
 /*Recuperando os valores dos checkbox */
 document.querySelectorAll(".adicionar").forEach((botao) => {
@@ -59,26 +89,46 @@ document.querySelectorAll(".adicionar").forEach((botao) => {
       };
     });
 
-    const checkbox = document.querySelectorAll(".item");
+    // 🚫 evita adicionar vazio
+    if (selecionados.length === 0) {
+      alert("Selecione pelo menos 1 sabor!");
+      return;
+    }
 
-    checkbox.forEach((checkbox) => {
-      checkbox.addEventListener("change", () => {
-        const marcados = document.querySelectorAll(".item:checked");
+    let produtoFinal;
 
-        if (marcados.length > 2) {
-          checkbox.checked = false;
-          alert("Você só pode escolher até 2 sabores!");
-        }
-      });
-    });
+    // 🍕 1 sabor
+    if (selecionados.length === 1) {
+      produtoFinal = {
+        nome: selecionados[0].nome,
+        preco: selecionados[0].preco,
+        tipo: "inteira",
+      };
+      selecionados.forEach((item) => carrinho.push(item));
+    }
+
+    // 🍕🍕 meio a meio
+    if (selecionados.length === 2) {
+      const [s1, s2] = selecionados;
+
+      produtoFinal = {
+        nome: `${s1.nome} / ${s2.nome}`,
+        preco:Number(s1.preco + s2.preco) / 2, // 🔥 regra do meio a meio
+        ingredientes: "meio a meio",
+        tamanho: s1.tamanho,
+        quantidade: s1.quantidade,
+      };
+      carrinho.push(produtoFinal);
+    }
 
     //? adiciona no carrinho global
-    selecionados.forEach((item) => carrinho.push(item));
 
     //? opcional: limpar seleção
-    secao.querySelectorAll(".item").forEach((el) => (el.checked = false));
+    secao.querySelectorAll(".item").forEach((el) => {
+      el.checked = false;
+      el.disabled = false;
+    });
 
-    //chamando a função para renderizar
     renderizarCarrinho();
   });
 });
