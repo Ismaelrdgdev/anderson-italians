@@ -59,7 +59,8 @@ document.addEventListener("change", (e) => {
   console.log({
     nome: checkbox.dataset.sabor,
     preco: parseFloat(checkbox.dataset.preco),
-    marcado: checkbox.checked
+    marcado: checkbox.checked,
+    id: checkbox.dataset.id
   });
 
   // 🔒 limita a 2
@@ -87,6 +88,8 @@ document.querySelectorAll(".adicionar").forEach((botao) => {
         ingredientes: item.dataset.ingredientes,
         preco: item.dataset.preco,
         quantidade: item.dataset.quantidade,
+        id: item.dataset.id,
+        tamanho: item.dataset.tamanho
       };
     });
 
@@ -104,6 +107,8 @@ document.querySelectorAll(".adicionar").forEach((botao) => {
         nome: selecionados[0].nome,
         preco: selecionados[0].preco,
         tipo: "inteira",
+        id: selecionados[0].id,
+        tamanho: selecionados[0].tamanho
       };
       selecionados.forEach((item) => carrinho.push(item));
       Swal.fire({
@@ -124,6 +129,7 @@ document.querySelectorAll(".adicionar").forEach((botao) => {
         ingredientes: "meio a meio",
         tamanho: s1.tamanho,
         quantidade: s1.quantidade,
+        id: s1.id
       };
 
       Swal.fire({
@@ -148,87 +154,116 @@ document.querySelectorAll(".adicionar").forEach((botao) => {
   });
 });
 
-//? FUNÇÃO PARA RENDERIZAR NO CARRINHO
+
+
 function renderizarCarrinho() {
+
   const container = document.getElementById("lista-carrinho");
-  // limpa antes de renderizar
+
   container.innerHTML = "";
+
   let total = 0;
 
   carrinho.forEach((item, index) => {
+
     total += Number(item.preco) * item.quantidade;
 
-    let valorTotal = document.getElementById("total");
-    valorTotal.innerHTML = total.toFixed(2).toString().replace(".", ",");
-
     const div = document.createElement("div");
+
     div.classList.add("item-carrinho");
 
-    div.innerHTML += `
+    div.innerHTML = `
+    
       <div
-                class="h-30 md:h-25 gap-2 p-3 md:w-full items-center bg-gray-100 flex flex-col rounded-xl shadow-md cairo"
-              >
-                <div class="flex justify-between gap-2 text-sm w-full">
-                  <div class="flex flex-col h-auto md:w-auto w-30">
-                    <p>${item.nome}</p>
-                    <p class="text-gray-500">
-                      ${item.ingredientes}
-                    </p>
-                  </div>
-                  <button
-                  
-                    class="h-5 flex justify-center items-center bg-red-500 text-white px-2 py-1 rounded-lg remover" data-name="${item.nome}"
-                  >
-                    Remover
-                  </button>
-                </div>
+        class="h-30 md:h-25 gap-2 p-3 md:w-full items-center bg-gray-100 flex flex-col rounded-xl shadow-md cairo"
+      >
 
-                <div class="flex justify-between w-full gap-2 text-lg">
-                  <p class="text-green-500">R$ ${item.preco}</p>
-                  <div class="bg-gray-300 rounded-lg px-2 flex gap-2">
-                    <button class= "subtract">-</button>
-                    <span class="text-green-500 qtd" >${item.quantidade}</span>
-                    <button class="add">+</button>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div class="flex justify-between gap-2 text-sm w-full">
+
+          <div class="flex flex-col h-auto md:w-auto w-30">
+            <p>${item.nome}</p>
+
+            <p class="text-gray-500">
+              ${item.ingredientes}
+            </p>
+          </div>
+
+          <button
+            data-id="${item.id}"
+            class="h-5 flex justify-center items-center bg-red-500 text-white px-2 py-1 rounded-lg remover"
+          >
+            Remover
+          </button>
+
+        </div>
+
+        <div class="flex justify-between w-full gap-2 text-lg">
+
+          <p class="text-green-500">
+            R$ ${item.preco}
+          </p>
+
+          <div class="bg-gray-300 rounded-lg px-2 flex gap-2">
+
+            <button class="subtract">
+              -
+            </button>
+
+            <span class="text-green-500 qtd">
+              ${item.quantidade}
+            </span>
+
+            <button class="add">
+              +
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
     `;
 
     container.appendChild(div);
+
   });
+
+  
+  // ATUALIZA O TOTAL UMA ÚNICA VEZ
+  const valorTotal = document.getElementById("total");
+
+  valorTotal.innerHTML = total.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL"
+  });
+
 }
 
 
 //? FUNÇÃO PARA REMOVER DO CARRINHO
 //Função para remover item do carrinho
-cartItemsContainer.addEventListener("click", function(event){
-    if(event.target.classList.contains("remover")){
-        const name = event.target.getAttribute("data-name")
-        console.log(name);
-        
-        
-        removeItemCart(name)
-    }
-})
+document.addEventListener("click", (e) => {
 
-function removeItemCart (name){
-    const index = carrinho.findIndex(item => item.name === name);
-    
-    if (index !== -1){
-        const item = carrinho[index];
+  if (e.target.classList.contains("remover")) {
 
-        if(item.quantity > 1){
-            item.quantity -= 1;
-            renderizarCarrinho();
-            return;
-        }
+    const id = Number(e.target.dataset.id);
 
-        carrinho.splice(index, 1);
-        renderizarCarrinho();
+    const index = carrinho.findIndex((item) => {
+      return item.id === id;
+    });
+
+    if (index !== -1) {
+
+      carrinho.splice(index, 1);
+
     }
 
-}
+    renderizarCarrinho();
+
+  }
+
+});
 
 
 //? FUNÇÃO PARA COPIAR O PIX

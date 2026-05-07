@@ -1,28 +1,28 @@
 const pizzas = [
-    {quantidade: 1, sabor:"Calabresa", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:19.99, preco1: 24.99, preco2:44.99, ingredientes:["Molho", "Mussarela","Calabresa","Oregano"]},
-    {quantidade: 1, sabor:"Calabresa com Catupiry", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:22.99, preco1: 27.99, preco2:47.99, ingredientes:["Molho", "Mussarela", "Calabresa", "Catupiry"]},
-    {quantidade: 1, sabor:"Frango com Cheeda ", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1: 24.99, preco2:44.99, ingredientes:["Molho", "Mussarela", "Frango", "Cheeda", "Oregano"]},
-    {quantidade: 1, sabor:"Portuguesa", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:19.99, preco1: 24.99, preco2:44.99, ingredientes:["Molho", "Mussarela", "Presunto", "Tomate", "Pimentão", "Ovo", "Milho", "Ervilha", "Cebola", "Oregano"]},
-    {quantidade: 1, sabor:"Mista", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:19.99, preco1: 24.99, preco2:44.99, ingredientes:["Molho", "Mussarela", "Presunto", "Calabresa", "Orégano"]},
-    {quantidade: 1, sabor:"Tomate", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:19.99, preco1: 24.99, preco2:40.00, ingredientes:["Molho", "Mussarela", "Tomate", "Oregano"]},
-    {quantidade: 1, sabor:"Mussarela", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:19.99, preco1: 24.99, preco2:44.99, ingredientes:["Molho", "Mussarela", "Oregano"]},
-    {quantidade: 1, sabor:"4 Queijos", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1: 34.99, preco2:54.99, ingredientes:["Molho", "Mussarela", "Parmesão", "Provolone", "Catupiry", "Oregano"]},
-    {quantidade: 1, sabor:"Nevada", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1: 29.99, preco2:44.99, ingredientes:["Creme de leite", "Mussarela", "Chocolate branco", "Açucar", "Canela", "Banana"]},
-    {quantidade: 1, sabor:"Nutela", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1: 34.99, preco2:49.99, ingredientes:["Creme de leite", "Nutela"]},
-    {quantidade: 1, sabor:"Bacon", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1: 34.99, preco2:54.99, ingredientes:["Molho", "Mussarela", "Bacon", "Ovos", "Oregano"]},
-    {quantidade: 1, sabor:"Bacon com Catupiry", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1: 37.99, preco2:57.99, ingredientes:["Molho", "Mussarela", "Bacon", "Catupiry", "Oregano"]},
+    {id: 0,quantidade: 1, sabor:"Calabresa", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:19.99, preco1: 24.99, preco2:44.99, ingredientes:["Molho", "Mussarela","Calabresa","Oregano"]},
+    {id: 1,quantidade: 1, sabor:"Frango com Cheeda ", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1: 24.99, preco2:44.99, ingredientes:["Molho", "Mussarela", "Frango", "Cheeda", "Oregano"]},
+    {id: 2,quantidade: 1, sabor:"Calabresa com Catupiry", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:22.99, preco1: 27.99, preco2:47.99, ingredientes:["Molho", "Mussarela", "Calabresa", "Catupiry"]},
+    {id: 3,quantidade: 1, sabor:"Portuguesa", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:19.99, preco1: 24.99, preco2:44.99, ingredientes:["Molho", "Mussarela", "Presunto", "Tomate", "Pimentão", "Ovo", "Milho", "Ervilha", "Cebola", "Oregano"]},
+    {id: 4,quantidade: 1, sabor:"Mista", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:19.99, preco1: 24.99, preco2:44.99, ingredientes:["Molho", "Mussarela", "Presunto", "Calabresa", "Orégano"]},
+    {id: 5,quantidade: 1, sabor:"Tomate", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:19.99, preco1: 24.99, preco2:40.00, ingredientes:["Molho", "Mussarela", "Tomate", "Oregano"]},
+    {id: 6,quantidade: 1, sabor:"Mussarela", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:19.99, preco1: 24.99, preco2:44.99, ingredientes:["Molho", "Mussarela", "Oregano"]},
+    {id: 7,quantidade: 1, sabor:"4 Queijos", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1: 34.99, preco2:54.99, ingredientes:["Molho", "Mussarela", "Parmesão", "Provolone", "Catupiry", "Oregano"]},
+    {id: 8,quantidade: 1, sabor:"Nevada", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1: 29.99, preco2:44.99, ingredientes:["Creme de leite", "Mussarela", "Chocolate branco", "Açucar", "Canela", "Banana"]},
+    {id: 9,quantidade: 1, sabor:"Nutela", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1: 34.99, preco2:49.99, ingredientes:["Creme de leite", "Nutela"]},
+    {id: 10,quantidade: 1, sabor:"Bacon", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1: 34.99, preco2:54.99, ingredientes:["Molho", "Mussarela", "Bacon", "Ovos", "Oregano"]},
+    {id: 11,quantidade: 1, sabor:"Bacon com Catupiry", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1: 37.99, preco2:57.99, ingredientes:["Molho", "Mussarela", "Bacon", "Catupiry", "Oregano"]},
 ];
 
 const pizzasDoces = [
-  {quantidade: 1, sabor:"MM", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:19.99, preco1:24.99, preco2:44.99, ingredientes:""},
-  {quantidade: 1, sabor:"Prestígio", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:19.99, preco1:24.99, preco2:44.99, ingredientes:""},
-  {quantidade: 1, sabor:"Doce de Leite", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:20.99, preco1:24.99, preco2:44.99, ingredientes:""},
-    {quantidade: 1, sabor:"Banana Nevada", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1:29.99, preco2:44.99, ingredientes:""},
-    {quantidade: 1, sabor:"Amendoim", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1:34.99, preco2:44.99, ingredientes:""},
-    {quantidade: 1, sabor:"Ovomaltine", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1:34.99, preco2:55.99, ingredientes:""},
-    {quantidade: 1, sabor:"Romeu e Julieta", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1:34.99, preco2:53.99, ingredientes:"" },
-    {quantidade: 1, sabor:"Nutela", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1:34.99, preco2:49.99, ingredientes:""},
-    {quantidade: 1, sabor:"Brigadeiro", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:19.99, preco1:24.99, preco2:44.99, ingredientes:""}
+    {id: 12,quantidade: 1, sabor:"MM", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:19.99, preco1:24.99, preco2:44.99, ingredientes:""},
+    {id: 13,quantidade: 1, sabor:"Prestígio", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:19.99, preco1:24.99, preco2:44.99, ingredientes:""},
+    {id: 14,quantidade: 1, sabor:"Doce de Leite", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:20.99, preco1:24.99, preco2:44.99, ingredientes:""},
+    {id: 15,quantidade: 1, sabor:"Banana Nevada", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1:29.99, preco2:44.99, ingredientes:""},
+    {id: 16,quantidade: 1, sabor:"Amendoim", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1:34.99, preco2:44.99, ingredientes:""},
+    {id: 17,quantidade: 1, sabor:"Ovomaltine", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1:34.99, preco2:55.99, ingredientes:""},
+    {id: 18,quantidade: 1, sabor:"Romeu e Julieta", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1:34.99, preco2:53.99, ingredientes:"" },
+    {id: 19,quantidade: 1, sabor:"Nutela", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1:34.99, preco2:49.99, ingredientes:""},
+    {id: 20,quantidade: 1, sabor:"Brigadeiro", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:19.99, preco1:24.99, preco2:44.99, ingredientes:""}
 ];
 
 const pizzasVariadas = [...pizzasDoces, ...pizzas];
@@ -31,8 +31,8 @@ const pizzasVariadas = [...pizzasDoces, ...pizzas];
 
 
 const bebidas = [
-  {quantidade: 1, sabor: "Coca-Cola 2L", preco: 14.00, ingredientes:"Geladinha na sua mesa"},
-  {quantidade: 1, sabor: "Guaraná Antártica 2L", preco: 12.00, ingredientes:"A mais saborosa"}
+  {id: 21,quantidade: 1, sabor: "Coca-Cola 2L", preco: 14.00, ingredientes:"Geladinha na sua mesa"},
+  {id: 22,quantidade: 1, sabor: "Guaraná Antártica 2L", preco: 12.00, ingredientes:"A mais saborosa"}
 ];
 
 
@@ -48,7 +48,7 @@ container.innerHTML = pizzas.map(item => `
               >
                 <div class="m-2 flex items-center w-full gap-3 text-sm">
 
-                  <input type="checkbox" class="w-5 h-5 item" data-tamanho=${item.tamanho} data-quantidade=${item.quantidade} data-preco=${item.preco.toFixed(2)} data-sabor="${item.sabor}" data-ingredientes=${item.ingredientes} />
+                  <input type="checkbox" class="w-5 h-5 item" data-id="${item.id}" data-tamanho=${item.tamanho} data-quantidade=${item.quantidade} data-preco=${item.preco.toFixed(2)} data-sabor="${item.sabor}" data-ingredientes=${item.ingredientes} />
                   <div class="flex w-full gap-8 items-center justify-between">
                     <div class="flex flex-col w-full">
                       <p class="md:text-lg">${item.sabor}</p>
@@ -73,7 +73,7 @@ container1.innerHTML = pizzas.map(item => `
               >
                 <div class="m-2 flex items-center w-full gap-3 text-sm mb-2">
 
-                  <input type="checkbox" class="w-5 h-5 item" data-tamanho=${item.tamanho2} data-quantidade=${item.quantidade} data-preco=${item.preco1.toFixed(2)} data-sabor="${item.sabor}" data-ingredientes=${item.ingredientes} />
+                  <input type="checkbox" class="w-5 h-5 item" data-id="${item.id}" data-tamanho=${item.tamanho2} data-quantidade=${item.quantidade} data-preco=${item.preco1.toFixed(2)} data-sabor="${item.sabor}" data-ingredientes=${item.ingredientes} />
                   <div class="flex w-full gap-8 items-center justify-between">
                     <div class="flex flex-col w-[80%]">
                       <p class="md:text-lg">${item.sabor}</p>
@@ -97,7 +97,7 @@ container2.innerHTML = pizzas.map(item => `
               >
                 <div class="m-2 flex items-center w-full gap-3 text-sm">
 
-                  <input type="checkbox" class="w-5 h-5 item" data-tamanho=${item.tamanho3} data-quantidade=${item.quantidade} data-preco=${item.preco2.toFixed(2)} data-sabor="${item.sabor}"data-ingredientes=${item.ingredientes} />
+                  <input type="checkbox" class="w-5 h-5 item" data-id="${item.id}" data-tamanho=${item.tamanho3} data-quantidade=${item.quantidade} data-preco=${item.preco2.toFixed(2)} data-sabor="${item.sabor}"data-ingredientes=${item.ingredientes} />
                   <div class="flex w-full gap-8 items-center justify-between">
                     <div class="flex flex-col w-[80%]">
                       <p class="md:text-lg">${item.sabor}</p>
@@ -123,7 +123,7 @@ container3.innerHTML = pizzasDoces.map(item => `
               >
                 <div class="m-2 flex items-center w-full gap-3 text-sm">
 
-                  <input type="checkbox" class="w-5 h-5 item" data-tamanho=${item.tamanho} data-quantidade=${item.quantidade} data-preco=${item.preco.toFixed(2)} data-sabor="${item.sabor}"  />
+                  <input type="checkbox" class="w-5 h-5 item" data-id="${item.id}" data-tamanho=${item.tamanho} data-quantidade=${item.quantidade} data-preco=${item.preco.toFixed(2)} data-sabor="${item.sabor}"  />
                   <div class="flex w-full gap-8 items-center justify-between">
                     <div class="flex flex-col w-[80%]">
                       <p class="md:text-lg">${item.sabor}</p>
@@ -145,7 +145,7 @@ container4.innerHTML = pizzasDoces.map(item => `
               >
                 <div class="m-2 flex items-center w-full gap-3 text-sm">
 
-                  <input type="checkbox" class="w-5 h-5 item" data-tamanho=${item.tamanho2} data-quantidade=${item.quantidade} data-preco=${item.preco1.toFixed(2)} data-sabor="${item.sabor}"/>
+                  <input type="checkbox" class="w-5 h-5 item" data-id="${item.id}" data-tamanho=${item.tamanho2} data-quantidade=${item.quantidade} data-preco=${item.preco1.toFixed(2)} data-sabor="${item.sabor}"/>
                   <div class="flex w-full gap-8 items-center justify-between">
                     <div class="flex flex-col w-[80%]">
                       <p class="md:text-lg">${item.sabor}</p>
@@ -167,7 +167,7 @@ container5.innerHTML = pizzasDoces.map(item => `
               >
                 <div class="m-2 flex items-center w-full gap-3 text-sm">
 
-                  <input data-quantidade=${item.quantidade} data-tamanho=${item.tamanho3} data-preco=${item.preco2.toFixed(2)} data-sabor="${item.sabor}" type="checkbox" class="w-5 h-5 item"  />
+                  <input data-quantidade=${item.quantidade} data-id="${item.id}" data-tamanho=${item.tamanho3} data-preco=${item.preco2.toFixed(2)} data-sabor="${item.sabor}" type="checkbox" class="w-5 h-5 item"  />
                   <div class="flex w-full gap-8 items-center justify-between">
                     <div class="flex flex-col w-[80%]">
                       <p class="md:text-lg">${item.sabor}</p>
@@ -189,7 +189,7 @@ refri.innerHTML = bebidas.map(item => `
               >
                 <div class="m-2 flex items-center w-full gap-3 text-sm ">
 
-                  <input data-quantidade=${item.quantidade} data-preco=${item.preco.toFixed(2)} data-sabor="${item.sabor}" data-ingredientes="${item.ingredientes}" type="checkbox" class="w-5 h-5 item" />
+                  <input data-quantidade=${item.quantidade} data-id="${item.id}" data-preco=${item.preco.toFixed(2)} data-sabor="${item.sabor}" data-ingredientes="${item.ingredientes}" type="checkbox" class="w-5 h-5 item" />
                   <div class= "flex w-full gap-8 items-center justify-between">
                     <div class="flex flex-col w-[80%]">
                       <p class="text-lg">${item.sabor}</p>
@@ -214,7 +214,7 @@ variadas.innerHTML = pizzasVariadas.map(item => `
               >
                 <div class="m-2 flex items-center w-full gap-3 text-sm">
 
-                  <input type="checkbox" class="w-5 h-5 item" data-tamanho=${item.tamanho} data-quantidade=${item.quantidade} data-preco=${item.preco.toFixed(2)} data-sabor="${item.sabor}" data-ingredientes=${item.ingredientes} />
+                  <input type="checkbox" class="w-5 h-5 item" data-id="${item.id}" data-tamanho=${item.tamanho} data-quantidade=${item.quantidade} data-preco=${item.preco.toFixed(2)} data-sabor="${item.sabor}" data-ingredientes=${item.ingredientes} />
                   <div class="flex w-full gap-8 items-center justify-between">
                     <div class="flex flex-col w-full">
                       <p class="md:text-lg">${item.sabor}</p>
@@ -235,7 +235,7 @@ variadas2.innerHTML = pizzasVariadas.map(item => `
               >
                 <div class="m-2 flex items-center w-full gap-3 text-sm">
 
-                  <input type="checkbox" class="w-5 h-5 item" data-tamanho=${item.tamanho2} data-quantidade=${item.quantidade} data-preco=${item.preco1.toFixed(2)} data-sabor="${item.sabor}" data-ingredientes=${item.ingredientes} />
+                  <input type="checkbox" class="w-5 h-5 item" data-id="${item.id}" data-tamanho=${item.tamanho2} data-quantidade=${item.quantidade} data-preco=${item.preco1.toFixed(2)} data-sabor="${item.sabor}" data-ingredientes=${item.ingredientes} />
                   <div class="flex w-full gap-8 items-center justify-between">
                     <div class="flex flex-col w-full">
                       <p class="md:text-lg">${item.sabor}</p>
@@ -256,7 +256,7 @@ variadas3.innerHTML = pizzasVariadas.map(item => `
               >
                 <div class="m-2 flex items-center w-full gap-3 text-sm">
 
-                  <input type="checkbox" class="w-5 h-5 item" data-tamanho=${item.tamanho3} data-quantidade=${item.quantidade} data-preco=${item.preco2.toFixed(2)} data-sabor="${item.sabor}" data-ingredientes=${item.ingredientes} />
+                  <input type="checkbox" class="w-5 h-5 item" data-id="${item.id}" data-tamanho=${item.tamanho3} data-quantidade=${item.quantidade} data-preco=${item.preco2.toFixed(2)} data-sabor="${item.sabor}" data-ingredientes=${item.ingredientes} />
                   <div class="flex w-full gap-8 items-center justify-between">
                     <div class="flex flex-col w-full">
                       <p class="md:text-lg">${item.sabor}</p>
