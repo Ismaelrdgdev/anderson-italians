@@ -88,7 +88,7 @@ document.querySelectorAll(".adicionar").forEach((botao) => {
         ingredientes: item.dataset.ingredientes,
         preco: item.dataset.preco,
         quantidade: item.dataset.quantidade,
-        id: item.dataset.id,
+        id: Date.now() + Math.random(),
         tamanho: item.dataset.tamanho
       };
     });
