@@ -183,9 +183,7 @@ function renderizarCarrinho() {
           <div class="flex flex-col h-auto md:w-auto w-30">
             <p>${item.nome}</p>
 
-            <p class="text-gray-500">
-              ${item.ingredientes}
-            </p>
+            
           </div>
 
           <button
