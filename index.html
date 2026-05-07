@@ -414,80 +414,72 @@
 
 <!--Pizzas Variadas-->
     <div
-      class="w-30 flex justify-center items-center h-10 rounded-sm border-b-2 border-red-500 m-auto shadow-md"
+      class="w-40 flex justify-center items-center rounded-sm h-10 border-b-2 border-red-500 m-auto shadow-md"
     >
-      <h1>Pizza Variadas</h1>
+      <h1>Pizza Doce + Salgada</h1>
     </div>
-
     <!--seção card salgadas-->
     <section class="flex flex-col items-center gap-4 mb-4 mt-2">
       <div
         class="h-30 gap-4 p-3 w-90 items-center bg-gray-100 flex rounded-xl shadow-md border-b-2 border-red-500"
-        id="pizza-variadas"
       >
         <div class="flex flex-col justify-around gap-2 text-sm" id="pizza-variadas">
-          <p>PIZZAS DOCE E SALGADA, MEIO A MEIO 25 CM</p>
+          <p>PIZZA DOCE + SALGADA - 25 cm</p>
           <p class="text-gray-500">
-            Escolha dois sabores diferentes.
+            Escolha um sabor ou divida a pizza em dois sabores diferentes.
           </p>
           <p class="text-lg">
             A partir de <span class="text-green-500"> R$ 19,99 </span>
           </p>
         </div>
       </div>
-    </section>
-    <!--FIM PIZZAS VARIADAS-->
 
-    <!--seção card variadas M-->
-    <section class="flex flex-col items-center gap-4 mb-4 mt-2">
       <div
         class="h-30 gap-4 p-3 w-90 items-center bg-gray-100 flex rounded-xl shadow-md border-b-2 border-red-500"
-        id="pizza-variadas2"
       >
         <div class="flex flex-col justify-around gap-2 text-sm" id="pizza-variadas2">
-          <p>PIZZAS DOCE E SALGADA, MEIO A MEIO 30 CM</p>
+          <p>PIZZA DOCE + SALGADA- 30 cm</p>
           <p class="text-gray-500">
-            Escolha dois sabores diferentes.
+            Escolha um sabor ou divida a pizza em dois sabores diferentes.
           </p>
           <p class="text-lg">
-            A partir de <span class="text-green-500"> R$ 19,99 </span>
+            A partir de <span class="text-green-500"> R$ 24,99 </span>
           </p>
         </div>
       </div>
-    </section>
-    <!--FIM PIZZAS VARIADASS M-->
 
-    <!--seção card VARIADAS G-->
-    <section class="flex flex-col items-center gap-4 mb-4 mt-2">
       <div
         class="h-30 gap-4 p-3 w-90 items-center bg-gray-100 flex rounded-xl shadow-md border-b-2 border-red-500"
         id="pizza-variadas3"
       >
-        <div class="flex flex-col justify-around gap-2 text-sm" id="pizza-variadas3">
-          <p>PIZZAS DOCE E SALGADA, MEIO A MEIO 40 CM</p>
+        <div
+          class="flex flex-col justify-around gap-2 text-sm abrirModal"
+          id="pizza-gd"
+        >
+          <p>PIZZA DOCE + SALGADA - 40 cm</p>
           <p class="text-gray-500">
-            Escolha dois sabores diferentes.
+            Escolha um sabor ou divida a pizza em dois sabores diferentes.
           </p>
           <p class="text-lg">
-            A partir de <span class="text-green-500"> R$ 19,99 </span>
+            A partir de <span class="text-green-500"> R$ 40,00 </span>
           </p>
         </div>
       </div>
     </section>
     <!--FIM PIZZAS SALGADAS-->
 
-
-    <!--CATALOGO Pizzas Variadas   -->
+    <!--Montagem das pizzas salgadas-->
+    <!--Pizzas pequenas-->
     <div
       id="card-pizza-variadas"
       class="bg-black/60 w-full h-full fixed top-0 left-0 `z-99` overflow-y-scroll items-center justify-center hidden"
     >
       <div class="flex justify-center items-center min-w-[90%] h-full">
         <div
-          class="h-full md:h-[500px] min-w-[90%] md:min-w-[500px] bg-white p-4 flex flex-col gap-4"
+          class="h-full md:h-[500px] md:max-w-[700px] w-full bg-white p-4 flex flex-col gap-4"
         >
           <div class="flex justify-between items-center">
-            <h2 class="text-lg font-bold">Pizzas Variadas - 25cm</h2>
+            <h2 class="text-lg font-bold">Pizza Pequena VARIADAS - 25 cm</h2>
             <button
               id="btn-fechar-pizza-variadas"
               class="text-gray-500 hover:text-gray-700"
@@ -517,18 +509,19 @@
         </div>
       </div>
     </div>
+    <!--Fim pizzas pequenas-->
 
-    <!--Pizzas Variadas   -->
+    <!--Pizzas Médias-->
     <div
       id="card-pizza-variadas2"
       class="bg-black/60 w-full h-full fixed top-0 left-0 `z-99` overflow-y-scroll items-center justify-center hidden"
     >
       <div class="flex justify-center items-center min-w-[90%] h-full">
         <div
-          class="h-full md:h-[500px] min-w-[90%] md:min-w-[500px] bg-white p-4 flex flex-col gap-4"
+          class="h-full md:h-[500px] md:max-w-[700px] w-full bg-white p-4 flex flex-col gap-4"
         >
           <div class="flex justify-between items-center">
-            <h2 class="text-lg font-bold">Pizzas Variadas - 30cm</h2>
+            <h2 class="text-lg font-bold">Pizza Média VARIADAS - 30 cm</h2>
             <button
               id="btn-fechar-pizza-variadas2"
               class="text-gray-500 hover:text-gray-700"
@@ -558,17 +551,19 @@
         </div>
       </div>
     </div>
-    <!--Pizzas Variadas   -->
+    <!--Fim pizzas médias-->
+
+    <!--Pizzas Grandes-->
     <div
       id="card-pizza-variadas3"
       class="bg-black/60 w-full h-full fixed top-0 left-0 `z-99` overflow-y-scroll items-center justify-center hidden"
     >
       <div class="flex justify-center items-center min-w-[90%] h-full">
         <div
-          class="h-full md:h-[500px] min-w-[90%] md:min-w-[500px] bg-white p-4 flex flex-col gap-4"
+          class="h-full md:h-[500px]  md:min-w-[600px] md:max-w-[700px] w-full bg-white p-4 flex flex-col gap-4"
         >
           <div class="flex justify-between items-center">
-            <h2 class="text-lg font-bold">Pizzas Variadas - 40cm</h2>
+            <h2 class="text-lg font-bold">Pizza Grande VARIADAS - 40 cm</h2>
             <button
               id="btn-fechar-pizza-variadas3"
               class="text-gray-500 hover:text-gray-700"
@@ -598,7 +593,7 @@
         </div>
       </div>
     </div>
-    <!--Fim pizzas variadas-->
+    <!--Fim pizzas grandes-->
 
 
 

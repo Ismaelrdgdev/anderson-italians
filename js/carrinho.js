@@ -12,6 +12,7 @@ const voltarCarrinho = document.getElementById("btn-fechar-entrega");
 const produtosDentroDoCarrinho = document.getElementById("lista-carrinho");
 const selectPagamento = document.getElementById("pagamento");
 const pix = document.getElementById("campoPix");
+const cartItemsContainer = document.getElementById("lista-carrinho")
 
 const carrinho = [];
 console.log(carrinho);
@@ -94,7 +95,7 @@ document.querySelectorAll(".adicionar").forEach((botao) => {
       alert("Selecione pelo menos 1 sabor!");
       return;
     }
-
+    const cartao = document.querySelectorAll(".cartao");
     let produtoFinal;
 
     // 🍕 1 sabor
@@ -105,6 +106,13 @@ document.querySelectorAll(".adicionar").forEach((botao) => {
         tipo: "inteira",
       };
       selecionados.forEach((item) => carrinho.push(item));
+      Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Produto adicionado ao carrinho!",
+      showConfirmButton: false,
+      timer: 1500
+      }); 
     }
 
     // 🍕🍕 meio a meio
@@ -117,6 +125,14 @@ document.querySelectorAll(".adicionar").forEach((botao) => {
         tamanho: s1.tamanho,
         quantidade: s1.quantidade,
       };
+
+      Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Produto adicionado ao carrinho!",
+      showConfirmButton: false,
+      timer: 1500
+      });
       carrinho.push(produtoFinal);
     }
 
@@ -160,9 +176,10 @@ function renderizarCarrinho() {
                     </p>
                   </div>
                   <button
-                    class="h-5 flex justify-center items-center bg-red-500 text-white px-2 py-1 rounded-lg"
+                  
+                    class="h-5 flex justify-center items-center bg-red-500 text-white px-2 py-1 rounded-lg remover" data-name="${item.nome}"
                   >
-                    <p>Remover</p>
+                    Remover
                   </button>
                 </div>
 
@@ -181,6 +198,38 @@ function renderizarCarrinho() {
     container.appendChild(div);
   });
 }
+
+
+//? FUNÇÃO PARA REMOVER DO CARRINHO
+//Função para remover item do carrinho
+cartItemsContainer.addEventListener("click", function(event){
+    if(event.target.classList.contains("remover")){
+        const name = event.target.getAttribute("data-name")
+        console.log(name);
+        
+        
+        removeItemCart(name)
+    }
+})
+
+function removeItemCart (name){
+    const index = carrinho.findIndex(item => item.name === name);
+    
+    if (index !== -1){
+        const item = carrinho[index];
+
+        if(item.quantity > 1){
+            item.quantity -= 1;
+            renderizarCarrinho();
+            return;
+        }
+
+        carrinho.splice(index, 1);
+        renderizarCarrinho();
+    }
+
+}
+
 
 //? FUNÇÃO PARA COPIAR O PIX
 function copiarPix() {
