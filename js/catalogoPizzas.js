@@ -1,6 +1,6 @@
 const pizzas = [
     {id: 0,quantidade: 1, sabor:"Calabresa", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:19.99, preco1: 24.99, preco2:44.99, ingredientes:["Molho", "Mussarela","Calabresa","Oregano"]},
-    {id: 1,quantidade: 1, sabor:"Frango com Cheeda ", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1: 24.99, preco2:44.99, ingredientes:["Molho", "Mussarela", "Frango", "Cheeda", "Oregano"]},
+    {id: 1,quantidade: 1, sabor:"Frango com Cheddar ", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1: 24.99, preco2:44.99, ingredientes:["Molho", "Mussarela", "Frango", "Cheeda", "Oregano"]},
     {id: 2,quantidade: 1, sabor:"Calabresa com Catupiry", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:22.99, preco1: 27.99, preco2:47.99, ingredientes:["Molho", "Mussarela", "Calabresa", "Catupiry"]},
     {id: 3,quantidade: 1, sabor:"Portuguesa", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:19.99, preco1: 24.99, preco2:44.99, ingredientes:["Molho", "Mussarela", "Presunto", "Tomate", "Pimentão", "Ovo", "Milho", "Ervilha", "Cebola", "Oregano"]},
     {id: 4,quantidade: 1, sabor:"Mista", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:19.99, preco1: 24.99, preco2:44.99, ingredientes:["Molho", "Mussarela", "Presunto", "Calabresa", "Orégano"]},

@@ -203,7 +203,7 @@ function renderizarCarrinho() {
 
           <div class="bg-gray-300 rounded-lg px-2 flex gap-2">
 
-            <button class="subtract">
+            <button class="subtract" data-id="${item.id}">
               -
             </button>
 
@@ -211,7 +211,7 @@ function renderizarCarrinho() {
               ${item.quantidade}
             </span>
 
-            <button class="add">
+            <button class="add" data-id="${item.id}">
               +
             </button>
 
@@ -351,4 +351,128 @@ function dadosEntrega() {}
 voltarCarrinho.addEventListener("click", () => {
   formEntrega.classList.add("hidden");
   card.classList.remove("hidden");
+});
+
+
+
+
+
+document.addEventListener("click", (e) => {
+
+  // AUMENTAR QUANTIDADE
+  if (e.target.classList.contains("add")) {
+
+    const id = Number(e.target.dataset.id);
+
+    const produto = carrinho.find((item) => {
+      return item.id === id;
+    });
+
+    if (produto) {
+
+      produto.quantidade++;
+
+    }
+
+    renderizarCarrinho();
+
+  }
+
+});
+
+
+document.addEventListener("click", (e) => {
+
+  // DIMINUIR QUANTIDADE
+  if (e.target.classList.contains("subtract")) {
+
+    const id = Number(e.target.dataset.id);
+
+    const produto = carrinho.find((item) => {
+      return item.id === id;
+    });
+
+    if (produto && produto.quantidade > 1) {
+
+      produto.quantidade--;
+
+    }
+
+    renderizarCarrinho();
+
+  }
+
+});
+
+
+
+const enviarPedido = document.getElementById("enviarPedido");
+
+enviarPedido.addEventListener("click", () => {
+  console.log("Funcionou");
+
+  const nome = document.getElementById("nome").value.trimEnd();
+  console.log(nome);
+  
+
+  const opcaoEntrega = document.getElementById("opcao").value;
+  console.log(opcaoEntrega);
+
+  const entrega = document.getElementById("campoExtra").value.trimEnd();
+  console.log(entrega);
+  
+
+  const pagamento = document.getElementById("pagamento").value;
+  console.log(pagamento);
+  
+  
+  
+
+
+  let mensagem = `🍕 *NOVO PEDIDO* \n\n`;
+  
+  mensagem += `👤 _Cliente:_ *${nome}*\n`;
+  
+  mensagem += `🏠 _Entrega ou Retirada ?_ *${opcaoEntrega}*\n`;
+  
+  mensagem += `🏠 _Endereço_  *${entrega}*\n`;
+  
+  mensagem += `💵 _Pagamento:_ *${pagamento}*\n\n`
+  
+  mensagem += `🛒 *ITENS DO PEDIDO*\n`;
+
+
+
+
+  let total = 0;
+
+
+  carrinho.forEach((item) => {
+
+    const subtotal = item.preco * item.quantidade;
+
+    total += subtotal;
+
+    mensagem += `
+🍕 ${item.nome}
+📏 Tamanho: ${item.tamanho}
+🔢 Quantidade: ${item.quantidade}
+💰 Valor: R$ ${subtotal.toFixed(2).replace(".",",")}
+
+`;
+
+  });
+
+
+  mensagem += `\n💵 *TOTAL: R$ ${total.toFixed(2).replace("." , ",")}*`;
+
+
+  const telefone = "5521993308955";
+
+
+  const url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
+
+
+  window.open(url, "_blank");
+
 });
