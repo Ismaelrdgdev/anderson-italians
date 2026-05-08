@@ -257,6 +257,20 @@ document.addEventListener("click", (e) => {
     if (index !== -1) {
 
       carrinho.splice(index, 1);
+      Swal.mixin({
+      toast: true,
+      position: "top",
+      showConfirmButton: false,
+      timer: 2500,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.onmouseenter = Swal.stopTimer;
+        toast.onmouseleave = Swal.resumeTimer;
+      },
+    }).fire({
+      icon: "success",
+      title: "Produto removido!",
+    });
 
     }
 
