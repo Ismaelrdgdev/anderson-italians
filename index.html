@@ -25,17 +25,18 @@
     >
       <img src="./images/logo (2).png" alt="" class="h-30" />
       <p class="text-white text-lg">Rua do Sossego 75 - Jardim América</p>
-      <p class="text-sm bg-green-500 rounded-sm p-1">
-        Aberto todos os dias das 18:00 ás 23:00
+      <p class="text-sm bg-green-500 rounded-sm p-1 " id = "abertoFechado">
+        Aberto todos os dias das 19:00 ás 23:30
       </p>
+      <p class="text-white hidden" id ="mensagem">Nesse horário estamos fechados</p>
     </header>
 
     <nav class="bg-red-500 text-white h-8 w-full flex cairo mb-8">
       <div class="flex gap-4 text-sm m-auto items-center">
         <a href="#pizza">Pizzas</a>
-        <a href="#dois-sabores">Dois sabores</a>
-        <a href="#pizzas-doce">Pizzas Doces</a>
-        <a href="">Bebida</a>
+        <a href="#doisSabores">Dois sabores</a>
+        <a href="#pizzasDoce">Pizzas Doces</a>
+        <a href="#bebidas">Bebida</a>
         <button id="img-carrinho">
           <img src="./images/carrinho.png" alt="" />
         </button>
@@ -227,7 +228,7 @@
     <div
       class="w-30 flex justify-center items-center h-10 rounded-sm border-b-2 border-red-500 m-auto shadow-md"
     >
-      <h1>Pizza Doce</h1>
+      <h1 id="pizzasDoce">Pizza Doce</h1>
     </div>
     <!--seção card doce-->
     <section class="flex flex-col items-center gap-4 mb-4 mt-2">
@@ -416,7 +417,7 @@
     <div
       class="w-40 flex justify-center items-center rounded-sm h-10 border-b-2 border-red-500 m-auto shadow-md"
     >
-      <h1>Pizza Doce + Salgada</h1>
+      <h1 id="doisSabores">Pizza Doce + Salgada</h1>
     </div>
     <!--seção card salgadas-->
     <section class="flex flex-col items-center gap-4 mb-4 mt-2">
@@ -671,7 +672,7 @@
     <!--Card Form-->
     <div
       id="card-entrega"
-      class="bg-black/60 w-full h-full fixed top-0 left-0 `z-99` items-center justify-center hidden"
+      class="bg-black/60 w-full h-full fixed top-0 left-0 `z-99` items-center justify-center hidden "
     >
       <div class="flex justify-center items-center min-w-[90%] h-full">
         <div
@@ -744,19 +745,23 @@
                   class="hidden text-lg mb-1"
                   >Qual seu endereço?</label
                 >
-                <input
-                name="Endereco"
-                  id="campoExtra"
-                  placeholder="Seu endereço aqui..."
-                  class="h-10 border-1 rounded-lg p-2 hidden"
-                />
+
+                
+                  <input
+                  name="Endereco"
+                    id="campoExtra"
+                    placeholder="Seu endereço aqui... Com número..."
+                    class="h-10 border-1 rounded-lg p-2 hidden "
+                  />
+  
+                 
 
                 <div class="flex flex-col w-full hidden" id="campoPix">
                   <label id="label-pix" for="valuePix" class="text-lg mb-1">Nossa chave Pix</label>
 
                   <div class="flex w-full gap-2">
                     <input class="text-center h-10 border-1 rounded-lg p-2 w-[70%]" type="text" id="valuePix"
-                    value="000.000.000-00" readonly>
+                    value="ismael@email.com" readonly>
 
                     <button type="button" onclick="copiarPix()" id="copyButton" class="h-10 border-1 border-black rounded-lg p-2 bg-rose-500 text-white w-[30%] ">Copiar</button>
                   </div>

@@ -7,6 +7,7 @@ const carrinhoCompras = document.getElementById("itens-carrinho");
 const formEntrega = document.getElementById("card-entrega");
 const select = document.getElementById("opcao");
 const inputExtra = document.getElementById("campoExtra");
+const numero = document.getElementById("numero")
 const label = document.getElementById("label-entrega");
 const voltarCarrinho = document.getElementById("btn-fechar-entrega");
 const produtosDentroDoCarrinho = document.getElementById("lista-carrinho");
@@ -20,12 +21,14 @@ console.log(carrinho);
 /*Abrindo carrinho */
 botaoCarrinho.addEventListener("click", () => {
   card.classList.remove("hidden");
-  console.log(carrinho);
+  document.body.style.overflow = "hidden";
+  
 });
 
 /*Fechando Carrinho */
 fecharCarrinho.addEventListener("click", () => {
   card.classList.add("hidden");
+  document.body.style.overflow = "auto";
   const secao = e.target.closest(".secao");
   
 });
@@ -303,9 +306,11 @@ selectPagamento.addEventListener("change", () => {
 select.addEventListener("change", () => {
   if (select.value === "entrega") {
     inputExtra.style.display = "block";
+    numero.style.display = "block"
     label.style.display = "block";
   } else {
     inputExtra.style.display = "none";
+    numero.style.display = "none"
     label.style.display = "none";
     inputExtra.value = ""; // limpa quando esconde
   }
@@ -462,6 +467,8 @@ enviarPedido.addEventListener("click", () => {
 `;
 
   });
+
+  mensagem += `_Tempo de entrega_: 30~45 minutos`
 
 
   mensagem += `\n💵 *TOTAL: R$ ${total.toFixed(2).replace("." , ",")}*`;

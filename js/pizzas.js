@@ -177,5 +177,21 @@ botaoFecharPizzaVariadas3.addEventListener("click", () => {
         document.body.style.overflow = "auto";
 });
 
+    const mensagem = document.getElementById("mensagem")
+    const abertoFechado = document.getElementById("abertoFechado")
+    const hora = new Date().getHours();
+    console.log(hora);
+    
+
+    if (hora >= 19 && hora < 24 ) {
+      abertoFechado.style.background = "green";
+      mensagem.classList.add("hidden")
+    }  
+    else {
+      abertoFechado.style.background  = "red"
+      mensagem.classList.remove("hidden")
+
+    }
+
 
 
