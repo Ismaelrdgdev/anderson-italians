@@ -7,13 +7,13 @@ const carrinhoCompras = document.getElementById("itens-carrinho");
 const formEntrega = document.getElementById("card-entrega");
 const select = document.getElementById("opcao");
 const inputExtra = document.getElementById("campoExtra");
-const numero = document.getElementById("numero")
+const numero = document.getElementById("numero");
 const label = document.getElementById("label-entrega");
 const voltarCarrinho = document.getElementById("btn-fechar-entrega");
 const produtosDentroDoCarrinho = document.getElementById("lista-carrinho");
 const selectPagamento = document.getElementById("pagamento");
 const pix = document.getElementById("campoPix");
-const cartItemsContainer = document.getElementById("lista-carrinho")
+const cartItemsContainer = document.getElementById("lista-carrinho");
 
 const carrinho = [];
 console.log(carrinho);
@@ -22,7 +22,6 @@ console.log(carrinho);
 botaoCarrinho.addEventListener("click", () => {
   card.classList.remove("hidden");
   document.body.style.overflow = "hidden";
-  
 });
 
 /*Fechando Carrinho */
@@ -30,23 +29,7 @@ fecharCarrinho.addEventListener("click", () => {
   card.classList.add("hidden");
   document.body.style.overflow = "auto";
   const secao = e.target.closest(".secao");
-  
 });
-
-/*Só deixa selecionar 2 checkbox */
-// const checkbox = document.querySelectorAll(".item");
-
-// checkbox.forEach((checkbox) => {
-//   checkbox.addEventListener("change", () => {
-//     const marcados = document.querySelectorAll(".item:checked");
-
-//     if (marcados.length > 2) {
-//       checkbox.checked = false;
-//       alert("Você só pode escolher até 2 sabores!");
-//     }
-//   });
-// });
-
 
 //? Checkbox → capturar + limitar seleção
 document.addEventListener("change", (e) => {
@@ -63,7 +46,7 @@ document.addEventListener("change", (e) => {
     nome: checkbox.dataset.sabor,
     preco: parseFloat(checkbox.dataset.preco),
     marcado: checkbox.checked,
-    id: checkbox.dataset.id
+    id: checkbox.dataset.id,
   });
 
   // 🔒 limita a 2
@@ -92,7 +75,7 @@ document.querySelectorAll(".adicionar").forEach((botao) => {
         preco: item.dataset.preco,
         quantidade: item.dataset.quantidade,
         id: Date.now() + Math.random(),
-        tamanho: item.dataset.tamanho
+        tamanho: item.dataset.tamanho,
       };
     });
 
@@ -111,16 +94,16 @@ document.querySelectorAll(".adicionar").forEach((botao) => {
         preco: selecionados[0].preco,
         tipo: "inteira",
         id: selecionados[0].id,
-        tamanho: selecionados[0].tamanho
+        tamanho: selecionados[0].tamanho,
       };
       selecionados.forEach((item) => carrinho.push(item));
       Swal.fire({
-      position: "center",
-      icon: "success",
-      title: "Produto adicionado ao carrinho!",
-      showConfirmButton: false,
-      timer: 1500
-      }); 
+        position: "center",
+        icon: "success",
+        title: "Produto adicionado ao carrinho!",
+        showConfirmButton: false,
+        timer: 1500,
+      });
     }
 
     // 🍕🍕 meio a meio
@@ -132,15 +115,15 @@ document.querySelectorAll(".adicionar").forEach((botao) => {
         ingredientes: "meio a meio",
         tamanho: s1.tamanho,
         quantidade: s1.quantidade,
-        id: s1.id
+        id: s1.id,
       };
 
       Swal.fire({
-      position: "center",
-      icon: "success",
-      title: "Produto adicionado ao carrinho!",
-      showConfirmButton: false,
-      timer: 1500
+        position: "center",
+        icon: "success",
+        title: "Produto adicionado ao carrinho!",
+        showConfirmButton: false,
+        timer: 1500,
       });
       carrinho.push(produtoFinal);
     }
@@ -157,10 +140,7 @@ document.querySelectorAll(".adicionar").forEach((botao) => {
   });
 });
 
-
-
 function renderizarCarrinho() {
-
   const container = document.getElementById("lista-carrinho");
 
   container.innerHTML = "";
@@ -168,7 +148,6 @@ function renderizarCarrinho() {
   let total = 0;
 
   carrinho.forEach((item, index) => {
-
     total += Number(item.preco) * item.quantidade;
 
     const div = document.createElement("div");
@@ -227,27 +206,23 @@ function renderizarCarrinho() {
     `;
 
     container.appendChild(div);
-
   });
 
-  
   // ATUALIZA O TOTAL UMA ÚNICA VEZ
   const valorTotal = document.getElementById("total");
-
+  
   valorTotal.innerHTML = total.toLocaleString("pt-BR", {
     style: "currency",
-    currency: "BRL"
+    currency: "BRL",
   });
 
-}
 
+}
 
 //? FUNÇÃO PARA REMOVER DO CARRINHO
 //Função para remover item do carrinho
 document.addEventListener("click", (e) => {
-
   if (e.target.classList.contains("remover")) {
-
     const id = Number(e.target.dataset.id);
 
     const index = carrinho.findIndex((item) => {
@@ -255,31 +230,26 @@ document.addEventListener("click", (e) => {
     });
 
     if (index !== -1) {
-
       carrinho.splice(index, 1);
       Swal.mixin({
-      toast: true,
-      position: "top",
-      showConfirmButton: false,
-      timer: 2500,
-      timerProgressBar: true,
-      didOpen: (toast) => {
-        toast.onmouseenter = Swal.stopTimer;
-        toast.onmouseleave = Swal.resumeTimer;
-      },
-    }).fire({
-      icon: "success",
-      title: "Produto removido!",
-    });
-
+        toast: true,
+        position: "top",
+        showConfirmButton: false,
+        timer: 2500,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        },
+      }).fire({
+        icon: "success",
+        title: "Produto removido!",
+      });
     }
 
     renderizarCarrinho();
-
   }
-
 });
-
 
 //? FUNÇÃO PARA COPIAR O PIX
 function copiarPix() {
@@ -303,7 +273,9 @@ function copiarPix() {
       icon: "success",
       title: "Chave Pix copiada!",
     });
-  } catch {}
+  } catch {
+    console.error("Ocorreu algum erro!");
+  }
 }
 
 // Mostra uma menssagem se o pagamento for em pix, ou troco se for em dinheiro
@@ -320,11 +292,10 @@ selectPagamento.addEventListener("change", () => {
 select.addEventListener("change", () => {
   if (select.value === "entrega") {
     inputExtra.style.display = "block";
-    numero.style.display = "block"
+    numero.style.display = "block";
     label.style.display = "block";
   } else {
     inputExtra.style.display = "none";
-    numero.style.display = "none"
     label.style.display = "none";
     inputExtra.value = ""; // limpa quando esconde
   }
@@ -363,24 +334,15 @@ finalizar.addEventListener("click", () => {
   }
 });
 
-//? FUNÇÃO IR PARA ENTREGA
-function dadosEntrega() {}
-
 //? VOLTAR PARA O CARRINHO
 voltarCarrinho.addEventListener("click", () => {
   formEntrega.classList.add("hidden");
   card.classList.remove("hidden");
 });
 
-
-
-
-
 document.addEventListener("click", (e) => {
-
   // AUMENTAR QUANTIDADE
   if (e.target.classList.contains("add")) {
-
     const id = Number(e.target.dataset.id);
 
     const produto = carrinho.find((item) => {
@@ -388,23 +350,16 @@ document.addEventListener("click", (e) => {
     });
 
     if (produto) {
-
       produto.quantidade++;
-
     }
 
     renderizarCarrinho();
-
   }
-
 });
 
-
 document.addEventListener("click", (e) => {
-
   // DIMINUIR QUANTIDADE
   if (e.target.classList.contains("subtract")) {
-
     const id = Number(e.target.dataset.id);
 
     const produto = carrinho.find((item) => {
@@ -412,18 +367,12 @@ document.addEventListener("click", (e) => {
     });
 
     if (produto && produto.quantidade > 1) {
-
       produto.quantidade--;
-
     }
 
     renderizarCarrinho();
-
   }
-
 });
-
-
 
 const enviarPedido = document.getElementById("enviarPedido");
 
@@ -431,69 +380,112 @@ enviarPedido.addEventListener("click", () => {
   console.log("Funcionou");
 
   const nome = document.getElementById("nome").value.trimEnd();
-  console.log(nome);
-  
+  if (nome === "") {
+    Swal.fire({
+      position: "center",
+      icon: "error",
+      title: "Você precisa informar seu nome!",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+    return;
+  }
+
+  const telefoneCelular = document.getElementById("numero").value;
+  if (telefoneCelular === "") {
+    Swal.fire({
+      position: "center",
+      icon: "error",
+      title: "Você precisa informar seu telefone!",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+    return;
+  }
 
   const opcaoEntrega = document.getElementById("opcao").value;
   console.log(opcaoEntrega);
 
+  if (opcaoEntrega === "Entrega/Retirada") {
+    Swal.fire({
+      position: "center",
+      icon: "error",
+      title: "Você precisa informar se é Entrega ou Retirada",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+
+    return;
+  }
+
   const entrega = document.getElementById("campoExtra").value.trimEnd();
   console.log(entrega);
+  if (opcaoEntrega === "entrega" && entrega === "") {
+    Swal.fire({
+      position: "center",
+      icon: "error",
+      title: "Você precisa Informar seu endereço!",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+    return;
+  }
+
   
 
   const pagamento = document.getElementById("pagamento").value;
   console.log(pagamento);
-  
-  
-  
-
+  if(pagamento === "Pagamento 🤑"){
+    Swal.fire({
+      position: "center",
+      icon: "error",
+      title: "Informe um pagamento!",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+    return
+  }
 
   let mensagem = `🍕 *NOVO PEDIDO* \n\n`;
-  
+
   mensagem += `👤 _Cliente:_ *${nome}*\n`;
-  
-  mensagem += `🏠 _Entrega ou Retirada ?_ *${opcaoEntrega}*\n`;
-  
+
+  mensagem += `♾️ _Entrega ou Retirada ?_ *${opcaoEntrega}*\n`;
+
   mensagem += `🏠 _Endereço_  *${entrega}*\n`;
-  
-  mensagem += `💵 _Pagamento:_ *${pagamento}*\n\n`
-  
+
+  mensagem += `💵 _Pagamento:_ *${pagamento}*\n\n`;
+
   mensagem += `🛒 *ITENS DO PEDIDO*\n`;
-
-
-
 
   let total = 0;
 
-
   carrinho.forEach((item) => {
-
     const subtotal = item.preco * item.quantidade;
 
     total += subtotal;
+
+    if (opcaoEntrega === "entrega"){
+      total += 5;
+      mensagem += `🛵 _Frete:_ R$ 5,00`
+    }
 
     mensagem += `
 🍕 ${item.nome}
 📏 Tamanho: ${item.tamanho}
 🔢 Quantidade: ${item.quantidade}
-💰 Valor: R$ ${subtotal.toFixed(2).replace(".",",")}
+💰 Valor: R$ ${subtotal.toFixed(2).replace(".", ",")}
 
 `;
-
   });
 
-  mensagem += `_Tempo de entrega_: 30~45 minutos`
+  mensagem += `_Tempo de entrega_: 30~45 minutos`;
 
+  mensagem += `\n💵 *TOTAL: R$ ${total.toFixed(2).replace(".", ",")}*`;
 
-  mensagem += `\n💵 *TOTAL: R$ ${total.toFixed(2).replace("." , ",")}*`;
-
-
-  const telefone = "5521993308955";
-
+  const telefone = "5521981824955";
 
   const url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
 
-
   window.open(url, "_blank");
-
 });
