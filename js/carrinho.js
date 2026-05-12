@@ -170,7 +170,7 @@ function renderizarCarrinho() {
 
         <div class="flex justify-between gap-2 text-sm w-full">
 
-          <div class="flex flex-col h-auto md:w-auto w-30">
+          <div class="flex flex-col h-auto md:w-auto w-50">
             <p>${item.nome}</p>
 
             
