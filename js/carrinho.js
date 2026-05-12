@@ -338,9 +338,9 @@ finalizar.addEventListener("click", () => {
       },
     }).fire({
       icon: "success",
-      title: "Ir para Entrega!",
+      title: "Preencha os dados da entrega!",
     });
-    console.log(carrinho);
+    
   }
 });
 
@@ -387,7 +387,7 @@ document.addEventListener("click", (e) => {
 const enviarPedido = document.getElementById("enviarPedido");
 
 enviarPedido.addEventListener("click", () => {
-  console.log("Funcionou");
+  
 
   const nome = document.getElementById("nome").value.trimEnd();
   if (nome === "") {
@@ -414,7 +414,7 @@ enviarPedido.addEventListener("click", () => {
   }
 
   const opcaoEntrega = document.getElementById("opcao").value;
-  console.log(opcaoEntrega);
+  
 
   if (opcaoEntrega === "Entrega/Retirada") {
     Swal.fire({
@@ -429,7 +429,7 @@ enviarPedido.addEventListener("click", () => {
   }
 
   const entrega = document.getElementById("campoExtra").value.trimEnd();
-  console.log(entrega);
+  
   if (opcaoEntrega === "entrega" && entrega === "") {
     Swal.fire({
       position: "center",
@@ -444,7 +444,7 @@ enviarPedido.addEventListener("click", () => {
   
 
   const pagamento = document.getElementById("pagamento").value;
-  console.log(pagamento);
+  
   if(pagamento === "Pagamento 🤑"){
     Swal.fire({
       position: "center",
@@ -465,20 +465,21 @@ enviarPedido.addEventListener("click", () => {
   mensagem += `🏠 _Endereço_  *${entrega}*\n`;
 
   mensagem += `💵 _Pagamento:_ *${pagamento}*\n\n`;
-
-  mensagem += `🛒 *ITENS DO PEDIDO*\n`;
-
+  
+  mensagem += `🛒 *ITENS DO PEDIDO*\n\n `;
+  
   let total = 0;
+  if (opcaoEntrega === "entrega"){
+      total += 5;
+      mensagem += `🛵 _Frete:_ R$ 5,00 \n`
+    }
 
   carrinho.forEach((item) => {
     const subtotal = item.preco * item.quantidade;
 
     total += subtotal;
 
-    if (opcaoEntrega === "entrega"){
-      total += 5;
-      mensagem += `🛵 _Frete:_ R$ 5,00`
-    }
+    
 
     mensagem += `
 🍕 ${item.nome}
