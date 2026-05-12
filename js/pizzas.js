@@ -1,3 +1,7 @@
+/*Botão abrir e fechar carrinho - fixo */
+const btnCarrinho = document.getElementById("carrinho");
+
+
 const abrirPizzasPq = document.getElementById("pizza-pq");
 const cardPizzasPq = document.getElementById("card-pizza-pq");
 const botaoFecharPizzaPequena = document.getElementById("btn-fechar-pizza-pq");
@@ -24,10 +28,6 @@ const abrirPizzasDoceGd = document.getElementById("pizza-doce-gd");
 const cardPizzasDoceGd = document.getElementById("card-pizza-doce-gd");
 const botaoFecharPizzaDoceGrande = document.getElementById("btn-fechar-pizza-doce-gd");
 
-const abrirPizzasVariadas = document.getElementById("pizza-variadas");
-const cardPizzasVariadas = document.getElementById("card-pizza-variadas");
-const botaoFecharPizzaVariadas = document.getElementById("btn-fechar-pizza-variadas");
-
 const abrirPizzasVariadas2 = document.getElementById("pizza-variadas2");
 const cardPizzasVariadas2 = document.getElementById("card-pizza-variadas2");
 const botaoFecharPizzaVariadas2 = document.getElementById("btn-fechar-pizza-variadas2");
@@ -37,6 +37,11 @@ const cardPizzasVariadas3 = document.getElementById("card-pizza-variadas3");
 const botaoFecharPizzaVariadas3 = document.getElementById("btn-fechar-pizza-variadas3");
 
 
+/*Abrindo carrinho pelo botão de baixo */
+btnCarrinho.addEventListener("click", ()=>{
+  card.classList.remove("hidden");
+  document.body.style.overflow = "hidden";
+});
 
 
 
@@ -56,12 +61,14 @@ document.querySelectorAll(".abrirModal").forEach((card)=>{
 abrirPizzasPq.addEventListener("click", () => {
     cardPizzasPq.classList.remove("hidden");
     document.body.style.overflow = "hidden";
+    btnCarrinho.classList.add("hidden");
 });
 
 /*Fechando modal de pizza pequena */
 botaoFecharPizzaPequena.addEventListener("click", () => {
         cardPizzasPq.classList.add("hidden");
         document.body.style.overflow = "auto";
+        btnCarrinho.classList.remove("hidden");
 });
 
 
@@ -69,24 +76,28 @@ botaoFecharPizzaPequena.addEventListener("click", () => {
 abrirPizzasMd.addEventListener("click", () => {
     cardPizzasMd.classList.remove("hidden");
     document.body.style.overflow = "hidden";
+    btnCarrinho.classList.add("hidden");
 });
 
 /*Fechando modal de pizza média */
 botaoFecharPizzaMedia.addEventListener("click", () => {
         cardPizzasMd.classList.add("hidden");
         document.body.style.overflow = "auto";
+        btnCarrinho.classList.remove("hidden");
 });
 
 /*Abrindo modal de pizza grande */
 abrirPizzasGd.addEventListener("click", () => {
     cardPizzasGd.classList.remove("hidden");
     document.body.style.overflow = "hidden";
+    btnCarrinho.classList.add("hidden");
 });
 
 /*Fechando modal de pizza grande */
 botaoFecharPizzaGrande.addEventListener("click", () => {
         cardPizzasGd.classList.add("hidden");
         document.body.style.overflow = "auto";
+        btnCarrinho.classList.remove("hidden");
 });
 
 /*Pizzas doces */
@@ -95,67 +106,65 @@ botaoFecharPizzaGrande.addEventListener("click", () => {
 abrirPizzasDocePq.addEventListener("click", () => {
     cardPizzasDocePq.classList.remove("hidden");
     document.body.style.overflow = "hidden";
+    btnCarrinho.classList.add("hidden");
 });
 
 /*Fechando modal de pizza doce pequena */
 botaoFecharPizzaDocePequena.addEventListener("click", () => {
         cardPizzasDocePq.classList.add("hidden");
         document.body.style.overflow = "auto";
+        btnCarrinho.classList.remove("hidden");
 });
 
 /*Abrindo modal de pizza doce média */
 abrirPizzasDoceMd.addEventListener("click", () => {
     cardPizzasDoceMd.classList.remove("hidden");
     document.body.style.overflow = "hidden";
+    btnCarrinho.classList.add("hidden");
 });
 
 /*Fechando modal de pizza doce média */
 botaoFecharPizzaDoceMedia.addEventListener("click", () => {
         cardPizzasDoceMd.classList.add("hidden");
         document.body.style.overflow = "auto";
+        btnCarrinho.classList.remove("hidden");
 });
 
 /*Abrindo modal de pizza doce grande */
 abrirPizzasDoceGd.addEventListener("click", () => {
     cardPizzasDoceGd.classList.remove("hidden");
     document.body.style.overflow = "hidden";
+    btnCarrinho.classList.add("hidden");
 });
 
 /*Fechando modal de pizza doce grande */
 botaoFecharPizzaDoceGrande.addEventListener("click", () => {
         cardPizzasDoceGd.classList.add("hidden");
         document.body.style.overflow = "auto";
+        btnCarrinho.classList.remove("hidden");
 });
 
 /*Abrindo modal de bebidas */
 abrirBebidas.addEventListener("click", () => {
     cardBebidas.classList.remove("hidden");
     document.body.style.overflow = "hidden";
+    btnCarrinho.classList.add("hidden");
 });
 
 /*Fechando modal de bebidas */
 botaoFecharBebidas.addEventListener("click", () => {
         cardBebidas.classList.add("hidden");
         document.body.style.overflow = "auto";
+        btnCarrinho.classList.remove("hidden");
 });
 
-/*Abrindo modal de pizza variadas */
-abrirPizzasVariadas.addEventListener("click", () => {
-    cardPizzasVariadas.classList.remove("hidden");
-    document.body.style.overflow = "hidden";
-    
-});
 
-/*Fechando modal de pizza variadas */
-botaoFecharPizzaVariadas.addEventListener("click", () => {
-        cardPizzasVariadas.classList.add("hidden");
-        document.body.style.overflow = "auto";
-});
 
 /*Abrindo modal de pizza variadas2 */
 abrirPizzasVariadas2.addEventListener("click", () => {
     cardPizzasVariadas2.classList.remove("hidden");
     document.body.style.overflow = "hidden";
+    btnCarrinho.classList.add("hidden");
     
 });
 
@@ -163,11 +172,15 @@ abrirPizzasVariadas2.addEventListener("click", () => {
 botaoFecharPizzaVariadas2.addEventListener("click", () => {
         cardPizzasVariadas2.classList.add("hidden");
         document.body.style.overflow = "auto";
+        btnCarrinho.classList.remove("hidden");
 });
+
+
 /*Abrindo modal de pizza variadas3 */
 abrirPizzasVariadas3.addEventListener("click", () => {
     cardPizzasVariadas3.classList.remove("hidden");
     document.body.style.overflow = "hidden";
+    btnCarrinho.classList.add("hidden");
     
 });
 
@@ -175,12 +188,12 @@ abrirPizzasVariadas3.addEventListener("click", () => {
 botaoFecharPizzaVariadas3.addEventListener("click", () => {
         cardPizzasVariadas3.classList.add("hidden");
         document.body.style.overflow = "auto";
+        btnCarrinho.classList.remove("hidden");
 });
 
     const mensagem = document.getElementById("mensagem")
     const abertoFechado = document.getElementById("abertoFechado")
     const hora = new Date().getHours();
-    console.log(hora);
     
 
     if (hora >= 19 && hora < 24 ) {

@@ -33,7 +33,6 @@
 
     <nav class="bg-blue-500 h-8 text-white w-full flex cairo mb-8">
       <div class="flex gap-4 text-md m-auto items-center">
-        <a href="#pizza">Pizzas</a>
         <a href="#doisSabores">Dois sabores</a>
         <a href="#pizzasDoce">Pizzas Doces</a>
         <a href="#bebidas">Bebida</a>
@@ -42,6 +41,7 @@
         </button>
       </div>
     </nav>
+    
 
     <div
       class="w-30 bg-white flex justify-center items-center rounded-sm h-10 border-b-2 border-blue-500 m-auto shadow-md"
@@ -424,20 +424,6 @@
       <div
         class="h-30 gap-4 p-3 w-90 items-center bg-white flex rounded-xl shadow-md border-b-2 border-blue-500"
       >
-        <div class="flex flex-col justify-around gap-2 text-sm" id="pizza-variadas">
-          <p>PIZZA DOCE + SALGADA - 25 cm</p>
-          <p class="text-gray-500">
-            Escolha um sabor ou divida a pizza em dois sabores diferentes.
-          </p>
-          <p class="text-lg">
-            A partir de <span class="text-green-500"> R$ 19,99 </span>
-          </p>
-        </div>
-      </div>
-
-      <div
-        class="h-30 gap-4 p-3 w-90 items-center bg-white flex rounded-xl shadow-md border-b-2 border-blue-500"
-      >
         <div class="flex flex-col justify-around gap-2 text-sm" id="pizza-variadas2">
           <p>PIZZA DOCE + SALGADA- 30 cm</p>
           <p class="text-gray-500">
@@ -471,45 +457,7 @@
 
     <!--Montagem das pizzas salgadas-->
     <!--Pizzas pequenas-->
-    <div
-      id="card-pizza-variadas"
-      class="bg-black/60 w-full h-full fixed top-0 left-0 `z-99` overflow-y-scroll items-center justify-center hidden"
-    >
-      <div class="flex justify-center items-center min-w-[90%] h-full">
-        <div
-          class="h-full md:h-[500px] md:max-w-[700px] w-full bg-white p-4 flex flex-col gap-4"
-        >
-          <div class="flex justify-between items-center">
-            <h2 class="text-lg font-bold">Pizza Pequena VARIADAS - 25 cm</h2>
-            <button
-              id="btn-fechar-pizza-variadas"
-              class="text-gray-500 hover:text-gray-700"
-            >
-              Fechar
-            </button>
-          </div>
-
-          <div class="flex flex-col justify-between secao">
-            <div
-              id="cardapio-variadas"
-              class="flex flex-col gap-2 h-[500px] md:max-h-[350px] overflow-y-scroll"
-            >
-              <!--Nova pizza-->
-            </div>
-
-            <div class="w-full md:max-w-[700px] bg-white p-2">
-              <div class="flex items-center w-full justify-center">
-                <button
-                  class="bg-red-500 text-lg text-white px-4 py-2 w-full rounded-lg adicionar"
-                >
-                  Adicionar ao carrinho
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    
     <!--Fim pizzas pequenas-->
 
     <!--Pizzas Médias-->
@@ -610,7 +558,7 @@
     </div>
     <section class="flex flex-col items-center gap-4 mb-4 mt-2">
       <div
-        class="h-30 gap-4 p-3 w-90 items-center bg-white flex rounded-xl shadow-md border-b-2 border-blue-500"
+        class="h-30 gap-4 p-3 w-90 items-center bg-white flex rounded-xl shadow-md border-b-2 border-blue-500 mb-10"
       >
         <div class="flex flex-col justify-around gap-2 text-sm" id="bebidas">
           <p>ESCOLHA ALGO PARA BEBER</p>
@@ -668,6 +616,14 @@
     </div>
 
     <!--Fim Card bebidas-->
+
+    <!--Botão abrir e fechar carrinho-->
+    <div class="flex justify-center" >
+      <div id="carrinho" class="w-full md:w-[50%] md:rounded-lg h-10 bg-red-500  fixed bottom-0 items-center text-white text-xl">
+        <p class="text-center mt-2">VER CARRINHO (<span class="qtdNoCarrinho"> 0 </span>)</p>
+      </div>
+    </div>
+    <!-- Fim Botão abrir e fechar carrinho-->
 
     <!--Card Form-->
     <div

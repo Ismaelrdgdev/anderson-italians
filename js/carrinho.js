@@ -16,7 +16,7 @@ const pix = document.getElementById("campoPix");
 const cartItemsContainer = document.getElementById("lista-carrinho");
 
 const carrinho = [];
-console.log(carrinho);
+
 
 /*Abrindo carrinho */
 botaoCarrinho.addEventListener("click", () => {
@@ -28,8 +28,14 @@ botaoCarrinho.addEventListener("click", () => {
 fecharCarrinho.addEventListener("click", () => {
   card.classList.add("hidden");
   document.body.style.overflow = "auto";
-  const secao = e.target.closest(".secao");
+  
 });
+
+
+
+
+
+
 
 //? Checkbox → capturar + limitar seleção
 document.addEventListener("change", (e) => {
@@ -142,6 +148,8 @@ document.querySelectorAll(".adicionar").forEach((botao) => {
 
 function renderizarCarrinho() {
   const container = document.getElementById("lista-carrinho");
+  const qtdNoCarrinho = document.querySelector(".qtdNoCarrinho");
+  qtdNoCarrinho.innerHTML = carrinho.length;
 
   container.innerHTML = "";
 
@@ -206,6 +214,8 @@ function renderizarCarrinho() {
     `;
 
     container.appendChild(div);
+
+
   });
 
   // ATUALIZA O TOTAL UMA ÚNICA VEZ
