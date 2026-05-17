@@ -1,6 +1,6 @@
 const pizzas = [
     {id: 0,quantidade: 1, sabor:"Calabresa", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:19.99, preco1: 24.99, preco2:44.99, ingredientes:["Molho", "Mussarela","Calabresa","Oregano"]},
-    {id: 1,quantidade: 1, sabor:"Frango com Cheddar ", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:24.99, preco1: 24.99, preco2:44.99, ingredientes:["Molho", "Mussarela", "Frango", "Cheeda", "Oregano"]},
+    {id: 1,quantidade: 1, sabor:"Frango com Cheddar ", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:19.99, preco1: 24.99, preco2:44.99, ingredientes:["Molho", "Mussarela", "Frango", "Cheeda", "Oregano"]},
     {id: 2,quantidade: 1, sabor:"Calabresa com Catupiry", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:22.99, preco1: 27.99, preco2:47.99, ingredientes:["Molho", "Mussarela", "Calabresa", "Catupiry"]},
     {id: 3,quantidade: 1, sabor:"Portuguesa", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:19.99, preco1: 24.99, preco2:44.99, ingredientes:["Molho", "Mussarela", "Presunto", "Tomate", "Pimentão", "Ovo", "Milho", "Ervilha", "Cebola", "Oregano"]},
     {id: 4,quantidade: 1, sabor:"Mista", tamanho: "P", tamanho2:"M", tamanho3: "G", preco:19.99, preco1: 24.99, preco2:44.99, ingredientes:["Molho", "Mussarela", "Presunto", "Calabresa", "Orégano"]},
@@ -29,8 +29,8 @@ const pizzasVariadas = [...pizzasDoces, ...pizzas];
 
 
 const bebidas = [
-  {id: 21,quantidade: 1, sabor: "Coca-Cola 2L", preco: 14.00, ingredientes:"Geladinha na sua mesa"},
-  {id: 22,quantidade: 1, sabor: "Guaraná Antártica 2L", preco: 12.00, ingredientes:"A mais saborosa"}
+  {id: 21,quantidade: 1, sabor: "Coca-Cola 2L", tamanho:"2 litros" , preco: 14.00, ingredientes:"Geladinha na sua mesa"},
+  {id: 22,quantidade: 1, sabor: "Guaraná Antártica 2L", tamanho:"2 litros" , preco: 12.00, ingredientes:"A mais saborosa"}
 ];
 
 
@@ -105,7 +105,7 @@ container2.innerHTML = pizzas.map(item => `
                     </div>
 
                     <div class="w-30">
-                      <p class="text-green-500 md:text-lg">R$ ${item.preco2.toString().replace("." , ",")}</p>
+                      <p class="text-green-500 md:text-lg">R$ ${item.preco2.toFixed(2).toString().replace("." , ",")}</p>
                     </div>
                   </div>
                 </div>
@@ -187,7 +187,7 @@ refri.innerHTML = bebidas.map(item => `
               >
                 <div class="m-2 flex items-center w-full gap-3 text-sm ">
 
-                  <input data-quantidade=${item.quantidade} data-id="${item.id}" data-preco=${item.preco.toFixed(2)} data-sabor="${item.sabor}" data-ingredientes="${item.ingredientes}" type="checkbox" class="w-5 h-5 item" />
+                  <input data-quantidade=${item.quantidade} data-id="${item.id}" data-tamanho="${item.tamanho}" data-preco=${item.preco.toFixed(2)} data-sabor="${item.sabor}" data-ingredientes="${item.ingredientes}" type="checkbox" class="w-5 h-5 item" />
                   <div class= "flex w-full gap-8 items-center justify-between">
                     <div class="flex flex-col w-[80%]">
                       <p class="text-lg">${item.sabor}</p>
@@ -241,7 +241,7 @@ variadas3.innerHTML = pizzasVariadas.map(item => `
                     </div>
 
                     <div class=" w-30">
-                      <p class="text-green-500 md:text-lg">R$ ${item.preco2.toString().replace("." , ",")}</p>
+                      <p class="text-green-500 md:text-lg">R$ ${item.preco2.toFixed(2).toString().replace("." , ",")}</p>
                     </div>
                   </div>
                 </div>
