@@ -115,6 +115,27 @@ document.querySelectorAll(".adicionar").forEach((botao) => {
     // 🍕🍕 meio a meio
     if (selecionados.length === 2) {
       const [s1, s2] = selecionados;
+
+      // Não permite meio a meio no tamanho P
+      if (s1.tamanho === "P") {
+        Swal.fire({
+          icon: "warning",
+          title: "Selecione apenas 1 sabor",
+          text: "O tamanho P permite apenas um sabor."
+        });
+
+        return;
+      }
+
+      if (s1.tamanho === "2 litros"){
+        Swal.fire({
+          icon: "warning",
+          title: "Selecione apenas 1 bebida",
+          text: "Caso queira duas, repita o processo."
+        });
+
+        return;
+      }
       produtoFinal = {
         nome: `${s1.nome} / ${s2.nome}`,
         preco: Math.max(s1.preco, s2.preco), // 🔥 regra do meio a meio
